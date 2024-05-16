@@ -51,12 +51,12 @@ If we "zoom out" (set $`r=1`$), we can see the resulting pattern on a larger sca
 ![e6](media/e7.png)
 
 # Relation to Euler's formula
-The very famous Euler's formula is given by: $$e^{i θ}=\cos(θ) + i \sin(θ)$$
+The very famous Euler's formula is given by: $$e^{i θ}=\cos θ + i \sin θ$$
 In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. We draw a line from the previous endpoint at an angle $`θ`$ calculated by $`θ(n)`$. A given endpoint can be expressed as a sum of previous endpoints:
 $$x_{0}=0$$
 $$y_{0}=0$$
-$$x_{n}=x_{n - 1} + r \cos(θ(n))$$
-$$y_{n}=y_{n - 1} + r \sin(θ(n))$$
+$$x_{n}=x_{n - 1} + r \cos θ(n)$$
+$$y_{n}=y_{n - 1} + r \sin θ(n)$$
 We can represent this moving endpoint as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plot these points on the complex plane), and use Euler's formula to simplify the expression:
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
@@ -70,4 +70,14 @@ Revolutions can be simpler to work with or easier to fathom than radians.
 In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can simply multiply its result by $`2 \pi`$ to convert to radians: $$2 \pi θ(n)$$
 Since this function no longer returns an angle, we should no longer call it $`θ(n)`$. Let's call it $`R(n)`$ instead. We can then rewrite the previous summation as: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
 
-As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other literature, dating back to Gauss sums and possibly earlier (factoring in my own gap in knowledge of its history).
+As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other literature, dating back to Gauss sums and possibly earlier (accounting for my own gap in knowledge).
+
+# Relation to Modular arithmetic
+There is an implicit modulo operation resulting from our usage of angles and revolutions.
+
+The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. We can apply modulation to these values since they will be used in $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \pmod{2 \pi})$$ $$\cos θ=\cos(θ \pmod{2 \pi})$$
+Therefore, we could explicitly add the implicit modulo within our sums without changing their results:
+$$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \pmod{2 \pi})}$$
+$$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \pmod 1)}$$
+
+Although this seemingly complicates our sums without changing their behavior, noting this relationship lends itself to the analysis of curlicue patterns, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's floating point number representation).

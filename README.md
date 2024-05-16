@@ -45,3 +45,16 @@ The following plot is produced from this function:
 If we "zoom out" (set $`r=1`$), we can see the resulting pattern on a larger scale ($`m=1000000`$):
 
 ![e6](media/e7.png)
+
+# Relation to Euler's formula
+The very famous Euler's formula is given by: $$e^{i θ}=\cos(θ) + i \sin(θ)$$
+In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. We calculate an angle $`θ`$ using $`θ(n)`$, and draw a line from the previous end point at this angle. We can think of a given end point as a sum of previous end points:
+$$x_{0}=0$$
+$$y_{0}=0$$
+$$x_{n}=x_{n - 1} + r \cos(θ(n))$$
+$$y_{n}=y_{n - 1} + r \sin(θ(n))$$
+We can represent this moving end point as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plot these points on the complex plane), and use Euler's formula to simplify the expression:
+$$p_{0}=0$$
+$$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
+From here, we can see that a given point $`p`$ for a cooresponding $`n`$ value $`m`$ can be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
+Therefore, the curlicue fractal can be described as a plot of each term of this summation.

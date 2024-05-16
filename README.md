@@ -90,3 +90,11 @@ I would like to further explore and document these relations (while filling in m
 - [Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Gauss_sum)
 - [Quadratic Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Quadratic_Gauss_sum)
 - [Theta function (Wikipedia)](https://en.wikipedia.org/wiki/Theta_function)
+
+# Analysis of specific $`θ(n)`$ functions
+In the following sections, specific forms of $`θ(n)`$ are analyzed. Each exhibits its own behavior and intricacies, and therefore are demanding of their own focused study.
+
+Also, since $`θ(n)`$ functions can arbitratily be mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
+# Analysis of $`R(n)=k n`$
+# Analysis of $`R(n)=k n^2`$
+# Analysis of $`R(n)=R(n-1) + k n ^ 2`$

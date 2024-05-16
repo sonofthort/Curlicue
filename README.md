@@ -63,3 +63,11 @@ $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
 From here, we can see that a given point $`p`$ for a cooresponding $`n`$ value $`m`$ can be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
 We can further pull the $`r`$ out using the rules of summation: $$r \displaystyle\sum_{n=1}^m e^{i θ(n)}$$
 This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. We can remove $`r`$ and succinctly express the following: $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i θ(n)} \text{, where } θ(n) \text{ is a user defined function.}$$
+
+# Revolutions vs. Radians
+Revolutions can be simpler to work with or easier to fathom than radians.
+
+In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can simply multiply its result by $`2 \pi`$ to convert to radians: $$2 \pi θ(n)$$
+Since this function no longer returns an angle, we should no longer call it $`θ(n)`$. Let's call it $`R(n)`$ instead. We can then rewrite the previous summation as: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+
+As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other literature, dating back to Gauss sums and possibly earlier (factoring in my own gap in knowledge of its history).

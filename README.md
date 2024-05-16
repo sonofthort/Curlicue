@@ -48,7 +48,7 @@ If we "zoom out" (set $`r=1`$), we can see the resulting pattern on a larger sca
 
 # Relation to Euler's formula
 The very famous Euler's formula is given by: $$e^{i θ}=\cos(θ) + i \sin(θ)$$
-In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. We calculate an angle $`θ`$ using $`θ(n)`$, and draw a line from the previous end point at this angle. We can think of a given end point as a sum of previous end points:
+In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. We draw a line from the previous end point at an angle $`θ`$ calculated by $`θ(n)`$. A given end point can be expressed as a sum of previous end points:
 $$x_{0}=0$$
 $$y_{0}=0$$
 $$x_{n}=x_{n - 1} + r \cos(θ(n))$$
@@ -57,4 +57,5 @@ We can represent this moving end point as a complex number, where $`x`$ is the r
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
 From here, we can see that a given point $`p`$ for a cooresponding $`n`$ value $`m`$ can be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
-Therefore, the curlicue fractal can be described as a plot of each term of this summation.
+We can further pull the $`r`$ out using the rules of summation: $$r \displaystyle\sum_{n=1}^m e^{i θ(n)}$$
+This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. We can remove $`r`$ and succinctly express the following: $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i θ(n)} \text{, where } θ(n) \text{ is a user defined function.}$$

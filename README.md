@@ -8,6 +8,9 @@ An exploration of curlicue fractals, with accompanying code.
 As an amatuer mathematician/enthusiast, I've found it difficult to string together information pertaining to what are described as curlicue fractals. This repo serves to coalesce information I've found, and to present my own findings (which could very well duplicate past mathematician's work, in which case, if you have any helpful information please do not hesitate to share - I would love to learn more).
 
 # What is a Curlicue fractal?
+
+![e8](media/e8.png)
+
 There are varying definitions, as multiple approaches/formulas can generate what are described in literature as curlicue fractals. However, there is one connecting theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
@@ -81,3 +84,9 @@ $$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \p
 $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \pmod 1)}$$
 
 Although this seemingly complicates our sums without changing their behavior, noting this relationship lends itself to the analysis of curlicue patterns, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's floating point number representation).
+
+# Relation to Gauss sums and theta functions
+I would like to further explore and document these relations (while filling in my knowledge gaps in the process), but summations which are similar to: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$ can be found referenced in materials pertaining to Gauss sums and theta functions:
+- [Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Gauss_sum)
+- [Quadratic Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Quadratic_Gauss_sum)
+- [Theta function (Wikipedia)](https://en.wikipedia.org/wiki/Theta_function)

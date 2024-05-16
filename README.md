@@ -9,7 +9,7 @@ As an amatuer mathematician/enthusiast, I've found it difficult to string togeth
 
 # What is a Curlicue fractal?
 
-![e8](media/e8.png)
+![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
 There are varying definitions, as multiple approaches/formulas can generate what are described in literature as curlicue fractals. However, there is one connecting theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
@@ -49,9 +49,9 @@ The following plot is produced by this function:
 
 ![e6](media/e6.png)
 
-If we "zoom out" (set $`r=1`$), we can see the resulting pattern on a much larger scale ($`m=1000000`$):
+If we "zoom out" (set $`r=1`$), we can see the resulting pattern on a much larger scale ($`m=1000000`$, and with a coloring scheme applied):
 
-![e6](media/e7.png)
+![e6](media/e7.png "θ(n)=n ^ 2")
 
 # Relation to Euler's formula
 The famous Euler's formula is given by: $$e^{i θ}=\cos θ + i \sin θ$$

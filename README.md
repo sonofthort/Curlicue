@@ -95,6 +95,21 @@ I would like to further explore and document these relations (while filling in m
 In the following sections, specific forms of $`θ(n)`$ are analyzed. Each exhibits its own behavior and intricacies, and therefore are demanding of their own focused study.
 
 Also, since $`θ(n)`$ functions can arbitratily be mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
+
 # Analysis of $`R(n)=k n`$
+This is perhaps the simplest form of $`R(n)`$ functions. Let $`k`$ be an arbitrary real number.
+
+Since we can apply modulation to $`R(n)`$ functions, we can rewrite the function as: $$R(n)=k n \pmod 1$$
+
+Let's take a moment to explore the case where $`k`$ is a rational number. In this case, we can define $`k`$ as: $$k=a/b$$
+Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$.
+
+We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \pmod 1$$
+From here, we can use the modulo conversion formulas: $$a \pmod m = (x a \pmod{x m}) / x$$ $$a \pmod m = x (a / x \pmod{m / x})$$
+With these formulas, we can show that: $$a n / b \pmod 1=(b a n / b \pmod{b 1})/b=(a n \pmod b)/b$$ $$R(n)=(a n \pmod b) / b$$
+Now, each term of the modulo operation is an integer, so rules derived from the quotient remainder theorem can be applied.
+
+Let's look at the modular multiplication rule: $$a b \pmod m=(a \pmod m)(b \pmod m) \pmod m$$
+and apply it to our function: $$R(n)=((a \pmod b)(n \pmod b) \pmod b) / b$$
 # Analysis of $`R(n)=k n^2`$
 # Analysis of $`R(n)=R(n-1) + k n ^ 2`$

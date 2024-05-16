@@ -1,14 +1,15 @@
 # Curlicue
 An exploration of curlicue fractals.
 
-As an amatuer mathematician/enthusiast, I've found it difficult to string together information pertaining to these fractals. This repo serves to coalesce information I've found, and to present my own findings (which could very well duplicate past mathematician's work, in which case, please let me know as I would love to learn more).
+As an amatuer mathematician/enthusiast, I've found it difficult to string together information pertaining to these fractals. This repo serves to coalesce information I've found, and to present my own findings (which could very well duplicate past mathematician's work, in which case, please let me know if you have any helpful information to share).
 
 # What is a Curlicue Fractal?
 There are varying definitions, as multiple approaches/formulas can generate what are described in literature as curlicue fractals. However, there is one connecting theme:
-1. Define a function which produces an angle (theta) from a given integer $`n`$:  $$θ(n)= ...$$
+1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
-3. From the endpoint of this line, continue to draw new lines, each at an angle determined by $`θ(n)`$ (where $`n`$ cooresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
-4. Repeat this step up to some maximum $`n`$ value, $`m`$.
+3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
+4. Repeat this process, drawing a line from the previous line, each at an angle determined by $`θ(n)`$ (where $`n`$ cooresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
+5. Stop this process once a maximum $`n`$ value, $`m`$, is reached.
 
 The resulting plot can vary significantly depening on the $`θ(n)`$ function. Some functions can produce chaotic/fractal patterns, where others can produce bounded or simply plots.
 
@@ -31,8 +32,16 @@ Here is an example:
 
 ![e4](media/e4.png)
 
-6. If we repeat this process up to $`n=100`$, we will achieve the following plot:
+6. If we repeat this process up to $`n=100`$, the following plot will be produced:
 
 ![e5](media/e5.png)
 
-This is a rather uninteresting example as the function $`θ(n)`$ is very simple and does not produce a chaotic pattern.
+This is certainly an interesting plot, but this $`θ(n)`$ function is very simple and the resulting circular "Spirograph" pattern never breaks. We can produce a much more complex plot by simply squaring $`n`$, resulting in the function: $$θ(n)=n^2$$
+
+The following plot is produced from this function:
+
+![e6](media/e6.png)
+
+If we "zoom out" (set $`r=1`$), we can see the resulting pattern on a larger scale ($`m=1000000`$):
+
+![e6](media/e7.png)

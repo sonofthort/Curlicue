@@ -58,8 +58,8 @@ Euler's formula is given by: $$e^{i θ}=\cos θ + i \sin θ$$
 In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. We draw a line from the previous endpoint at an angle $`θ`$ calculated by $`θ(n)`$. A given endpoint can be expressed as a sum of previous endpoints:
 $$x_{0}=0$$
 $$y_{0}=0$$
-$$x_{n}=x_{n - 1} + r \cos θ(n)$$
-$$y_{n}=y_{n - 1} + r \sin θ(n)$$
+$$x_{n}=x_{n - 1} + r \cos{θ(n)}$$
+$$y_{n}=y_{n - 1} + r \sin{θ(n)}$$
 We can instead represent this moving endpoint as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plot these points on the complex plane), and use Euler's formula to simplify the expression:
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$

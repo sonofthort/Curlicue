@@ -1,7 +1,7 @@
 # Curlicue
 An exploration of curlicue fractals, with accompanying code.
 
-![face1](media/face1.png "\"The Face\"")
+![face1](media/face2.png "\"The Face\"")
 
 *(This is an image of a plot that I've dubbed "The Face" - more information below)*
 
@@ -54,7 +54,7 @@ If we "zoom out" (set $`r=1`$), we can see the resulting pattern on a much large
 ![e6](media/e7.png "θ(n)=n ^ 2")
 
 # Relation to Euler's formula
-The famous Euler's formula is given by: $$e^{i θ}=\cos θ + i \sin θ$$
+Euler's formula is given by: $$e^{i θ}=\cos θ + i \sin θ$$
 In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. We draw a line from the previous endpoint at an angle $`θ`$ calculated by $`θ(n)`$. A given endpoint can be expressed as a sum of previous endpoints:
 $$x_{0}=0$$
 $$y_{0}=0$$

@@ -78,10 +78,10 @@ As it turns out, this is a helpful abstraction for the analysis of curlicue patt
 # Relation to modular arithmetic
 There is an implicit modulo operation resulting from our usage of angles and revolutions.
 
-The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. We can apply modulation to these values since they will be used in $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \pmod{2 \pi})$$ $$\cos θ=\cos(θ \pmod{2 \pi})$$
+The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. We can apply modulation to these values since they will be used in $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
 Therefore, we could explicitly add the implicit modulo within our sums without changing their results:
-$$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \pmod{2 \pi})}$$
-$$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \pmod 1)}$$
+$$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \bmod{2 \pi})}$$
+$$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \bmod 1)}$$
 
 Although this seemingly complicates our sums without changing their behavior, noting this relationship lends itself to the analysis of curlicue patterns, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's floating point number representation).
 
@@ -92,24 +92,29 @@ I would like to further explore and document these relations (while filling in m
 - [Theta function (Wikipedia)](https://en.wikipedia.org/wiki/Theta_function)
 
 # Analysis of specific $`θ(n)`$ functions
-In the following sections, specific forms of $`θ(n)`$ are analyzed. Each exhibits its own behavior and intricacies, and therefore are demanding of their own focused study.
+In the following sections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, and therefore are worthy of their own focus.
 
 Also, since $`θ(n)`$ functions can arbitratily be mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
+
+There are a few formulas which will aid in analysis:
+- $`a b \bmod m = (a \bmod m b) \bmod m \text{, where b and m are integers, and where a is a real number}`$
+- $`a b \bmod m = (a \bmod m b \bmod m) \bmod m \text{, where a, b, and m are integers}`$
+- $`a + b \bmod m = (a \bmod m + b \bmod m) \bmod m`$
 
 # Analysis of $`R(n)=k n`$
 This is perhaps the simplest form of $`R(n)`$ functions. Let $`k`$ be an arbitrary real number.
 
-Since we can apply modulation to $`R(n)`$ functions, we can rewrite the function as: $$R(n)=k n \pmod 1$$
+Since we can apply modulation to $`R(n)`$ functions, we can rewrite the function as: $$R(n)=k n \bmod 1$$
 
 Let's take a moment to explore the case where $`k`$ is a rational number. In this case, we can define $`k`$ as: $$k=a/b$$
 Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$.
 
-We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \pmod 1$$
-From here, we can use the modulo conversion formulas: $$a \pmod m = (x a \pmod{x m}) / x$$ $$a \pmod m = x (a / x \pmod{m / x})$$
-With these formulas, we can show that: $$a n / b \pmod 1=(b a n / b \pmod{b 1})/b=(a n \pmod b)/b$$ $$R(n)=(a n \pmod b) / b$$
+We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
+From here, we can use the modulo conversion formulas: $$a \bmod m = (x a \bmod{x m}) / x$$ $$a \bmod m = x (a / x \bmod{m / x})$$
+With these formulas, we can show that: $$a n / b \bmod 1=(b a n / b \bmod{b 1})/b=(a n \bmod b)/b$$ $$R(n)=(a n \bmod b) / b$$
 Now, each term of the modulo operation is an integer, so rules derived from the quotient remainder theorem can be applied.
 
-Let's look at the modular multiplication rule: $$a b \pmod m=(a \pmod m)(b \pmod m) \pmod m$$
-and apply it to our function: $$R(n)=((a \pmod b)(n \pmod b) \pmod b) / b$$
+Let's look at the modular multiplication rule: $$a b \bmod m=(a \bmod m)(b \bmod m) \bmod m$$
+and apply it to our function: $$R(n)=((a \bmod b)(n \bmod b) \bmod b) / b$$
 # Analysis of $`R(n)=k n^2`$
 # Analysis of $`R(n)=R(n-1) + k n ^ 2`$

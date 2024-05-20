@@ -9,7 +9,7 @@ As an amatuer mathematician/enthusiast, I've found it difficult to piece togethe
 
 # What is a Curlicue fractal?
 > $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
-*[(My own attempt at a generalized definition)](https://github.com/sonofthort/Curlicue/tree/main?tab=readme-ov-file#relation-to-eulers-formula)*
+*(My own attempt at a generalized definition)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 

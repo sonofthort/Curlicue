@@ -8,7 +8,7 @@ An exploration of curlicue fractals, with accompanying code.
 As an amatuer mathematician/enthusiast, I've found it difficult to piece together information pertaining to what are described as curlicue fractals. This article serves to collect information I've found, and to present my own findings (which could very well duplicate past mathematician's work, in which case, if you have any helpful information please do not hesitate to share - I would love to learn more).
 
 # What is a Curlicue fractal?
-> $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which returns a rotation.}$$
+> $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
 *[(My own definition)](https://github.com/sonofthort/Curlicue/tree/main?tab=readme-ov-file#relation-to-eulers-formula)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")

@@ -5,15 +5,17 @@ An exploration of curlicue fractals, with accompanying code.
 
 *(This is an image of a plot that I've dubbed "The Face" - more information below)*
 
-As an amatuer mathematician/enthusiast, I've found it difficult to piece together information pertaining to what are described as curlicue fractals. This article serves to collect information I've found, and to present my own findings (which could very well duplicate past mathematician's work, in which case, if you have any helpful information please do not hesitate to share - I would love to learn more).
+As an amatuer mathematician/enthusiast, I've found it difficult to piece together information on curlicue fractals. However, the learning process is very rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to consolidate information.
+
+I would also like to present some of my own findings, which could very well duplicate other mathematician's work. If this is the case, I apologize in advance and would love to learn more. If you have any helpful information, I would be very grateful for your feedback.
 
 # What is a Curlicue fractal?
 > $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
-*(My own attempt at a generalized definition)*
+*(My own attempt at a generalized definition, which this article will attempt to explain)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
-If the preceding formula causes some confusion, this article should hopefully explain how it is derived from simple processes. Multiple approaches/formulas can generate what are described as curlicue fractals. However, there seems to be one common theme:
+If the preceding formula causes some confusion, this article should hopefully explain how it is derived from a simple process. Multiple approaches/formulas can generate what are described as curlicue fractals. However, there seems to be one common theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.

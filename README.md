@@ -9,11 +9,11 @@ As an amatuer mathematician/enthusiast, I've found it difficult to piece togethe
 
 # What is a Curlicue fractal?
 > $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
-*[(My own definition)](https://github.com/sonofthort/Curlicue/tree/main?tab=readme-ov-file#relation-to-eulers-formula)*
+*[(My own attempt at a generalized definition)](https://github.com/sonofthort/Curlicue/tree/main?tab=readme-ov-file#relation-to-eulers-formula)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
-There are varying definitions, as multiple approaches/formulas can generate what are described as curlicue fractals. However, there is one underlying theme:
+If the preceding formula causes some confusion, this article should hopefully explain how it is derived from simple processes. Multiple approaches/formulas can generate what are described as curlicue fractals. However, there seems to be one common theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
@@ -97,11 +97,11 @@ Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions,
 # Analysis of $`R(n)=k n`$
 This is perhaps the simplest form of $`R(n)`$ functions. Let $`k`$ be an arbitrary real number.
 
-Since we can apply modulation to $`R(n)`$ functions, we can rewrite the function as: $$R(n)=k n \bmod 1$$
+Since modulation can be applied to $`R(n)`$ functions, the function can be rewritten as: $$R(n)=k n \bmod 1$$
 
-From here, we can apply a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication): $$R(n)=(k \bmod 1) n \bmod 1$$
+From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$R(n)=(k \bmod 1) n \bmod 1$$
 
-This shows that only the values $`0 <= k < 1`$ are interesting, since values outside of this range can be mapped to values within this range due to $`\bmod 1`$.
+This shows that only values $`0 <= k < 1`$ are of interest, since values outside of this range map to values within this range by $`\bmod 1`$.
 
 Let's take a moment to explore the case where $`k`$ is a rational number. In this case, we can define $`k`$ as: $$k=a/b$$
 Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$.

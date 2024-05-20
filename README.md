@@ -3,8 +3,6 @@ An exploration of curlicue fractals, with accompanying code.
 
 ![face1](media/face2.png "\"The Face\"")
 
-*(This is an image of a plot that I've dubbed "The Face" - more information below)*
-
 As an amatuer mathematician/enthusiast, I've found it difficult to piece together information on curlicue fractals. However, the learning process is very rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to consolidate information.
 
 I would also like to present some of my own findings, which could very well duplicate other mathematician's work. If this is the case, I apologize in advance and would love to learn more. If you have any helpful information, I would be very grateful for your feedback.
@@ -15,7 +13,7 @@ I would also like to present some of my own findings, which could very well dupl
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
-If the preceding formula causes some confusion, I hope to demonstrate how it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there seems to be one common theme:
+If the preceding formula causes some confusion, I hope to demonstrate how it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there is a common theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
@@ -99,21 +97,25 @@ Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions,
 ## Analysis of $`R(n)=k n`$
 This is perhaps the simplest form of $`R(n)`$ functions. Let $`k`$ be an arbitrary real number.
 
+### Range of $`k`$
 Since modulation can be applied to $`R(n)`$ functions, the function can be rewritten as: $$R(n)=k n \bmod 1$$
 
 From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$R(n)=(k \bmod 1) n \bmod 1$$
 
 This shows that only values $`0 <= k < 1`$ are of interest, since values outside of this range map to values within this range by $`\bmod 1`$.
 
-Let's take a moment to explore the case where $`k`$ is a rational number. In this case, we can define $`k`$ as: $$k=a/b$$
-Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$ (and where $`a \lt b`$).
+For negative $`k`$ value mapping, we can refer to [these relationships](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#negative-numbers) to show that: $$-k \bmod 1 = \lceil k \rceil - k$$
+
+### Rational $`k`$ values
+In the case that k is a rational number, $`k`$ can be expressed as $$k=a/b$$
+where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$ (and where $`a \lt b`$).
 
 We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
 From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion): $$a n / b \bmod 1=(a n \bmod b) / b$$
-This causes the modulo operands to become integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
+The modulo operands are now integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
 ($`a \bmod b`$ is technically redundant, since $`a \lt b`$)
 
-As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. However, we haven't ruled out the possibility of other periods.
+As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. However, we haven't ruled out the possibility for other periods.
 
 ## Analysis of $`R(n)=k n^2`$
 - TODO

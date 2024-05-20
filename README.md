@@ -9,11 +9,11 @@ I would also like to present some of my own findings, which could very well dupl
 
 # What is a Curlicue fractal?
 > $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
-*(My own attempt at a generalized definition, which this article will attempt to explain)*
+*(My own attempt at a generalized definition, which this article will attempt to defend)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
-If the preceding formula causes some confusion, I hope to demonstrate how it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there is a common theme:
+If the preceding formula causes some confusion, I hope to demonstrate that it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there is a common theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.

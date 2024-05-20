@@ -8,7 +8,9 @@ An exploration of curlicue fractals, with accompanying code.
 As an amatuer mathematician/enthusiast, I've found it difficult to piece together information pertaining to what are described as curlicue fractals. This article serves to collect information I've found, and to present my own findings (which could very well duplicate past mathematician's work, in which case, if you have any helpful information please do not hesitate to share - I would love to learn more).
 
 # What is a Curlicue fractal?
-
+> $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which returns a rotation.}$$
+*[(My own definition)](https://github.com/sonofthort/Curlicue/tree/main?tab=readme-ov-file#relation-to-eulers-formula)*
+ 
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
 There are varying definitions, as multiple approaches/formulas can generate what are described as curlicue fractals. However, there is one underlying theme:
@@ -63,7 +65,7 @@ $$y_{n}=y_{n - 1} + r \sin{θ(n)}$$
 This moving endpoint can instead be expressed as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plotted on the complex plane), and Euler's formula can simplify the expression:
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
-From here, it can be seen that a given point $`p`$ for a cooresponding $`n`$ value, $`m`$, can be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
+From this, a given point $`p`$ for a cooresponding $`n`$ value, $`m`$, can be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
 $`r`$ can then be extracted using the rules of summation: $$r \displaystyle\sum_{n=1}^m e^{i θ(n)}$$
 This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed: $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i θ(n)} \text{, where } θ(n) \text{ is an arbitrary function.}$$
 
@@ -79,29 +81,27 @@ As it turns out, this is a helpful abstraction for the analysis of curlicue patt
 There is an implicit modulo operation occuring within these summations.
 
 The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will be used within $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
-The implicit modulo within these sums can be explicitly added without changing their outcome:
+The implicit modulos within these sums can be explicitly added without changing the summation outcomes:
 $$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \bmod{2 \pi})}$$
 $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \bmod 1)}$$
 
 Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to the analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's floating point number representation).
 
-[My article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis, and which will be referenced in this article.
-
-# Relation to Gauss sums and theta functions
-I would like to further explore and document these relations (while attemping to fill my knowledge gaps in the process), but summations which are similar to: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$ can be found referenced in materials pertaining to Gauss sums and theta functions:
-- [Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Gauss_sum)
-- [Quadratic Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Quadratic_Gauss_sum)
-- [Theta function (Wikipedia)](https://en.wikipedia.org/wiki/Theta_function)
+[My article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 
 # Analysis of specific $`θ(n)`$ functions
-In the following sections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, and benefit from their own focused investigation.
+In the following sections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, and benefit from their own analysis.
 
-Also, since $`θ(n)`$ functions can arbitratily be mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
+Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
 
 # Analysis of $`R(n)=k n`$
 This is perhaps the simplest form of $`R(n)`$ functions. Let $`k`$ be an arbitrary real number.
 
 Since we can apply modulation to $`R(n)`$ functions, we can rewrite the function as: $$R(n)=k n \bmod 1$$
+
+From here, we can apply a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication): $$R(n)=(k \bmod 1) n \bmod 1$$
+
+This shows that only the values $`0 <= k < 1`$ are interesting, since values outside of this range can be mapped to values within this range due to $`\bmod 1`$.
 
 Let's take a moment to explore the case where $`k`$ is a rational number. In this case, we can define $`k`$ as: $$k=a/b$$
 Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$.
@@ -122,3 +122,9 @@ and apply it to our function: $$R(n)=((a \bmod b)(n \bmod b) \bmod b) / b$$
 
 # Application to music
 - TODO
+
+# Relation to Gauss sums and theta functions
+Although I would like to further explore and document these relations (while attemping to fill my knowledge gaps in the process), it's worth noting that summations which are similar to: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$ can be found referenced in materials pertaining to Gauss sums and theta functions:
+- [Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Gauss_sum)
+- [Quadratic Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Quadratic_Gauss_sum)
+- [Theta function (Wikipedia)](https://en.wikipedia.org/wiki/Theta_function)

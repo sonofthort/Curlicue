@@ -15,7 +15,7 @@ I would also like to present some of my own findings, which could very well dupl
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
-If the preceding formula causes some confusion, this article should hopefully explain how it is derived from a simple process. Multiple approaches/formulas can generate what are described as curlicue fractals. However, there seems to be one common theme:
+If the preceding formula causes some confusion, I hope to demonstrate how it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there seems to be one common theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
@@ -24,7 +24,7 @@ If the preceding formula causes some confusion, this article should hopefully ex
 
 The resulting plot can vary significantly depening on the $`θ(n)`$ function. Some functions can produce chaotic/fractal patterns, while others can produce bounded or simple plots.
 
-Example:
+## Example
 1. Define a very simple theta function: $$θ(n)=n$$
 2. Let $`r=100`$ to assist in visualization.
 3. Start at the origin $`(0, 0)`$:
@@ -64,7 +64,7 @@ $$x_{0}=0$$
 $$y_{0}=0$$
 $$x_{n}=x_{n - 1} + r \cos{θ(n)}$$
 $$y_{n}=y_{n - 1} + r \sin{θ(n)}$$
-This moving endpoint can instead be expressed as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plotted on the complex plane), and Euler's formula can simplify the expression:
+This moving endpoint can instead be expressed as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plotted on the complex plane), and Euler's formula can further simplify the expression:
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
 From this, a given point $`p`$ for a cooresponding $`n`$ value, $`m`$, can be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
@@ -92,11 +92,11 @@ Although this seemingly complicates the sums without changing their behavior, no
 [My article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 
 # Analysis of specific $`θ(n)`$ functions
-In the following sections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, and benefit from their own analysis.
+In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, and benefit from their own analysis.
 
 Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
 
-# Analysis of $`R(n)=k n`$
+## Analysis of $`R(n)=k n`$
 This is perhaps the simplest form of $`R(n)`$ functions. Let $`k`$ be an arbitrary real number.
 
 Since modulation can be applied to $`R(n)`$ functions, the function can be rewritten as: $$R(n)=k n \bmod 1$$
@@ -109,17 +109,13 @@ Let's take a moment to explore the case where $`k`$ is a rational number. In thi
 Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$.
 
 We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
-From here, we can use the modulo conversion formulas: $$a \bmod m = (x a \bmod{x m}) / x$$ $$a \bmod m = x (a / x \bmod{m / x})$$
-With these formulas, we can show that: $$a n / b \bmod 1=(b a n / b \bmod{b 1})/b=(a n \bmod b)/b$$ $$R(n)=(a n \bmod b) / b$$
-Now, each term of the modulo operation is an integer, so rules derived from the quotient remainder theorem can be applied.
+From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion): $$a n / b \bmod 1=(a n \bmod b) / b$$
+This causes all of the modulo operands to become integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
 
-Let's look at the modular multiplication rule: $$a b \bmod m=(a \bmod m)(b \bmod m) \bmod m$$
-and apply it to our function: $$R(n)=((a \bmod b)(n \bmod b) \bmod b) / b$$
-
-# Analysis of $`R(n)=k n^2`$
+## Analysis of $`R(n)=k n^2`$
 - TODO
 
-# Analysis of $`R(n)=R(n-1) + k n ^ 2`$
+## Analysis of $`R(n)=R(n-1) + k n ^ 2`$
 - TODO
 
 # Application to music

@@ -92,7 +92,7 @@ Although this seemingly complicates the sums without changing their behavior, no
 [My article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 
 # Analysis of specific $`θ(n)`$ functions
-In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, and benefit from their own analysis.
+In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, but also share some characteristics analysis methodologies.
 
 Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
 
@@ -106,11 +106,14 @@ From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-A
 This shows that only values $`0 <= k < 1`$ are of interest, since values outside of this range map to values within this range by $`\bmod 1`$.
 
 Let's take a moment to explore the case where $`k`$ is a rational number. In this case, we can define $`k`$ as: $$k=a/b$$
-Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$.
+Where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$ (and where $`a \lt b`$).
 
 We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
 From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion): $$a n / b \bmod 1=(a n \bmod b) / b$$
-This causes all of the modulo operands to become integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
+This causes the modulo operands to become integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
+($`a \bmod b`$ is technically redundant, since $`a \lt b`$)
+
+As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. However, we haven't ruled out the possibility of other periods.
 
 ## Analysis of $`R(n)=k n^2`$
 - TODO

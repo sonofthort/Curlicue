@@ -76,17 +76,17 @@ Revolutions can sometimes be simpler to work with and more intiuative than radia
 In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can multiply its result by $`2 \pi`$ to convert to radians: $$2 \pi θ(n)$$
 Since $`θ(n)`$ no longer returns an angle in this example, we can instead use the name $`R(n)`$ for functions which produce a rotation. The previous summation can then be written as: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
 
-As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other sources, dating back to Gauss sums (and possibly earlier, accounting for my own knowledge gaps).
+As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other sources, dating back to Gauss sums (and possibly earlier).
 
 # Relation to modular arithmetic
 There is an implicit modulo operation occuring within these summations.
 
 The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will be used within $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
-The implicit modulos within these sums can be explicitly added without changing the summation outcomes:
+The implicit modulos within these sums can be explicitly added without affecting the result:
 $$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \bmod{2 \pi})}$$
 $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \bmod 1)}$$
 
-Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to the analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's floating point number representation).
+Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to the analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's numberic representation).
 
 [This article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 

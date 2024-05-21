@@ -86,7 +86,7 @@ The implicit modulos within these sums can be explicitly added without affecting
 $$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \bmod{2 \pi})}$$
 $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \bmod 1)}$$
 
-Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to the analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's numerical representation system).
+Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's numerical representation system).
 
 [This article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 

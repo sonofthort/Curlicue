@@ -3,7 +3,7 @@ An exploration of curlicue fractals, with accompanying code.
 
 ![face1](media/face2.png "\"The Face\"")
 
-As an amatuer mathematician/enthusiast, I've found it difficult to piece together information on curlicue fractals. However, the learning process is very rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to consolidate information.
+As an amatuer mathematician/enthusiast, I've found it difficult to piece together information on curlicue fractals. However, the learning process is very rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to link and share information.
 
 I would also like to present some of my own findings, which could very well duplicate other mathematician's work. If this is the case, I apologize in advance and would love to learn more. If you have any helpful information, I would be very grateful for your feedback.
 

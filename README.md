@@ -8,7 +8,8 @@ As an amatuer mathematician/enthusiast, I've found it difficult to piece togethe
 I would also like to present some of my own findings, which could very well duplicate other mathematician's work. If this is the case, I apologize in advance and would love to learn more. If you have any helpful information, I would be very grateful for your feedback.
 
 # What is a Curlicue fractal?
-> $$\text{A curlicue fractal may result from a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
+> $$\text{A curlicue fractal may result from a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+> $$\text{where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
 *(My own attempt at a generalized definition, which this article will attempt to defend)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
@@ -118,6 +119,25 @@ The modulo operands are now integers, so an [integer modular multiplication rule
 ($`a \bmod b`$ is technically redundant, since $`a \lt b`$)
 
 As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. However, we haven't ruled out the possibility for other periods.
+
+An algebraic approach can also be employed to determine the periodicity of this function. Solve for all $`p`$ (period) values: $$a n \equiv a (n + p) \pmod b$$
+From the [Wikipedia modular arithmetic article](https://en.wikipedia.org/wiki/Modular_arithmetic#Basic_properties), we have the following:
+
+> $$\text{If }a + k \equiv b + k \pmod m \text{, where } k \text{ is any integer, then } a \equiv b \pmod m \text{. (1)}$$
+> 
+> $$\text{If }k a \equiv k b \pmod m \text{ and } k \text{ is coprime with } m \text{, then } a \equiv b \pmod m \text{. (2)}$$
+
+- $`a n \equiv a (n + p) \pmod b`$
+- $`a n \equiv a n + a p \pmod b`$
+- This matches the form of property (1), where $`a n`$ is the common term. Apply this rule.
+- $`0 + a n \equiv a p + a n \pmod b`$
+- $`0 \equiv a p \pmod b`$
+- Now, this matches the form of the property (2), where $`a`$ is the common term. Apply this rule.
+- $`a 0 \equiv a p \pmod b`$
+- $`0 = p \pmod b`$
+- This property holds, since $`a`$ will always be coprime with $`b`$ (as the fraction $`a / b`$ can be reduced until the terms are coprime).
+
+Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`b`$.
 
 ## Analysis of $`R(n)=k n^2`$
 - TODO

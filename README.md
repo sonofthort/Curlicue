@@ -116,7 +116,7 @@ where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$ (and where $`a \lt b`
 We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
 From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion): $$a n / b \bmod 1=(a n \bmod b) / b$$
 The modulo operands are now integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
-($`a \bmod b`$ is technically redundant, since $`a \lt b`$)
+($`a \bmod b`$ is technically redundant, since $`0 \leq a \lt b`$)
 
 As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. However, we haven't ruled out the possibility for other periods.
 
@@ -139,6 +139,13 @@ Attempt to apply these rules to cancel out terms:
 - This rule holds, since $`a`$ will always be coprime with $`b`$ (as the fraction $`a / b`$ can be reduced until the terms are coprime).
 
 Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`b`$.
+
+### Irrational $`k`$ values
+This is a kind of handwavy "proof", but any irrational number $`k`$ can be approximated as a rational number by $`k \approx \lfloor k z \rfloor / z`$
+
+As $`z`$ approaches $`\infty`$, the approximation becomes more accurate. In theory, the approximation becomes equivalent to $`k`$ at $`z = \infty`$. In this way, an irrational number can be thought of as a fraction of infinitely large terms.
+
+Continuing with this idea, irrational $`k`$ values will result in a period of $`\infty`$. In other words, there will be no period.
 
 ## Analysis of $`R(n)=k n^2`$
 - TODO

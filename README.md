@@ -147,6 +147,9 @@ As $`z`$ approaches $`\infty`$, the approximation error approaches $`0`$. In the
 
 Based on this idea, irrational $`k`$ values should result in a period of $`\infty`$. In other words, the function is not periodic.
 
+### Describing the plot
+TODO, should always result in a circle of some radius based on k.
+
 ## Analysis of $`R(n)=k n^2`$
 - TODO
 

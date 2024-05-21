@@ -8,7 +8,7 @@ As an amatuer mathematician/enthusiast, I've found it difficult to piece togethe
 I would also like to present some of my own findings, which could very well duplicate other mathematician's work. If this is the case, I apologize in advance and would love to learn more. If you have any helpful information, I would be very grateful for your feedback.
 
 # What is a Curlicue fractal?
-> $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
+> $$\text{A curlicue fractal may result from a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)} \text{, where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
 *(My own attempt at a generalized definition, which this article will attempt to defend)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
@@ -88,6 +88,8 @@ $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \p
 Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to the analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's floating point number representation).
 
 [This article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
+
+[The Wikipedia article on modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) will also be of use here.
 
 # Analysis of specific $`θ(n)`$ functions
 In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, but also share some characteristics and analysis methodologies.

@@ -82,15 +82,15 @@ As it turns out, this is a helpful abstraction for the analysis of curlicue patt
 There is an implicit modulo operation occuring within these summations.
 
 The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will be used within $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
-The implicit modulos within these sums can be explicitly added without affecting the result:
+The implicit modulos within these sums can be explicitly added without affecting their results:
 $$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \bmod{2 \pi})}$$
 $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \bmod 1)}$$
 
-Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to the analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's numberic representation).
+Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to the analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's numerical representation system).
 
 [This article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 
-[The Wikipedia article on modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) will also be of use here.
+[The Wikipedia article on modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) will also be of help here.
 
 # Analysis of specific $`θ(n)`$ functions
 In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, but also share some characteristics and analysis methodologies.
@@ -111,7 +111,7 @@ For negative $`k`$ value mapping, we can refer to [these relationships](https://
 
 ### Rational $`k`$ values
 In the case that k is a rational number, $`k`$ can be expressed as $$k=a/b$$
-where $`a`$ and $`b`$ are integers, and where $`b \neq 0`$ (and where $`a \lt b`$).
+where $`a`$ and $`b`$ are coprime integers ($`a/b`$ is a reduced fraction), and where $`b \neq 0`$ and $`a \lt b`$.
 
 We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
 From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion): $$a n / b \bmod 1=(a n \bmod b) / b$$

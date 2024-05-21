@@ -120,23 +120,23 @@ The modulo operands are now integers, so an [integer modular multiplication rule
 
 As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. However, we haven't ruled out the possibility for other periods.
 
-An algebraic approach can also be used to determine the periodicity of this function. Solve for all $`p`$ (period) values: $$a n \equiv a (n + p) \pmod b$$
+An algebraic approach can also be employed to determine the periodicity of this function. Solve for all $`p`$ (period) values: $$a n \equiv a (n + p) \pmod b$$
 From the [Wikipedia modular arithmetic article](https://en.wikipedia.org/wiki/Modular_arithmetic#Basic_properties), we have the following:
 
 > $$\text{If }a + k \equiv b + k \pmod m \text{, where } k \text{ is any integer, then } a \equiv b \pmod m \text{. (1)}$$
 > 
 > $$\text{If }k a \equiv k b \pmod m \text{ and } k \text{ is coprime with } m \text{, then } a \equiv b \pmod m \text{. (2)}$$
 
-Attempt to apply these rules:
+Attempt to apply these rules to cancel out terms:
 - $`a n \equiv a (n + p) \pmod b`$
 - $`a n \equiv a n + a p \pmod b`$
-- This matches the form of property (1), where $`a n`$ is the common term. Apply this rule.
+- This matches the form of rule (1), where $`a n`$ is the common term. Apply this rule.
 - $`0 + a n \equiv a p + a n \pmod b`$
 - $`0 \equiv a p \pmod b`$
-- Now, this matches the form of the property (2), where $`a`$ is the common term. Apply this rule.
+- This now matches the form of the rule (2), where $`a`$ is the common term. Apply this rule.
 - $`a 0 \equiv a p \pmod b`$
 - $`0 = p \pmod b`$
-- This property holds, since $`a`$ will always be coprime with $`b`$ (as the fraction $`a / b`$ can be reduced until the terms are coprime).
+- This rule holds, since $`a`$ will always be coprime with $`b`$ (as the fraction $`a / b`$ can be reduced until the terms are coprime).
 
 Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`b`$.
 

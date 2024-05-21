@@ -136,7 +136,6 @@ Attempt to apply these rules to cancel out terms:
 - This now matches the form of the rule (2), where $`a`$ is the common term. Apply this rule.
 - $`a 0 \equiv a p \pmod b`$
 - $`0 = p \pmod b`$
-- This rule holds, since $`a`$ will always be coprime with $`b`$ (as the fraction $`a / b`$ can be reduced until the terms are coprime).
 
 Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`b`$.
 

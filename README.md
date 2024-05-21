@@ -140,7 +140,7 @@ Attempt to apply these rules to cancel out terms:
 Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`b`$.
 
 ### Irrational $`k`$ values
-This is a kind of handwavy "proof", but any irrational number $`k`$ can be approximated as a rational number (fraction) by $`k \approx \lfloor k z \rfloor / z`$, where $`z`$ is an integer.
+This is a very handwavy "proof", but any irrational number $`k`$ can be approximated as a rational number (fraction) by $`k \approx \lfloor k z \rfloor / z`$, where $`z`$ is an integer.
 
 As $`z`$ approaches $`\infty`$, the approximation error approaches $`0`$. In theory, the approximation becomes equivalent to $`k`$ at $`z = \infty`$.
 $$\lim_{z\to\infty} k - \lfloor k z \rfloor / z = 0$$

@@ -143,9 +143,9 @@ Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`
 ### Irrational $`k`$ values
 This is a kind of handwavy "proof", but any irrational number $`k`$ can be approximated as a rational number (fraction) by $`k \approx \lfloor k z \rfloor / z`$, where $`z`$ is an integer.
 
-As $`z`$ approaches $`\infty`$, the approximation becomes more accurate. In theory, the approximation becomes equivalent to $`k`$ at $`z = \infty`$. In this way, an irrational number can be thought of as a fraction of infinitely large terms.
+As $`z`$ approaches $`\infty`$, the approximation error approaches $`0`$. In theory, the approximation becomes equivalent to $`k`$ at $`z = \infty`$. In this way, an irrational number can be thought of as a fraction of infinitely large terms.
 
-Continuing with this idea, irrational $`k`$ values will result in a period of $`\infty`$. In other words, there will be no period.
+Based on this idea, irrational $`k`$ values should result in a period of $`\infty`$. In other words, the function is not periodic.
 
 ## Analysis of $`R(n)=k n^2`$
 - TODO

@@ -141,7 +141,7 @@ Attempt to apply these rules to cancel out terms:
 Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`b`$.
 
 ### Irrational $`k`$ values
-This is a kind of handwavy "proof", but any irrational number $`k`$ can be approximated as a rational number by $`k \approx \lfloor k z \rfloor / z`$
+This is a kind of handwavy "proof", but any irrational number $`k`$ can be approximated as a rational number (fraction) by $`k \approx \lfloor k z \rfloor / z`$, where $`z`$ is an integer.
 
 As $`z`$ approaches $`\infty`$, the approximation becomes more accurate. In theory, the approximation becomes equivalent to $`k`$ at $`z = \infty`$. In this way, an irrational number can be thought of as a fraction of infinitely large terms.
 

@@ -3,20 +3,22 @@ An exploration of curlicue fractals, with accompanying code.
 
 ![face1](media/face2.png "\"The Face\"")
 
-As an amatuer mathematician/enthusiast, I've found it difficult to piece together information on curlicue fractals. However, the learning process is very rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to link and share information.
+As an amatuer mathematician/enthusiast, I've found it difficult to piece together curlicue fractal information. However, the learning process is rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to link and present information.
 
-I would also like to present some of my own findings, which could very well duplicate other mathematician's work. If this is the case, I apologize in advance and would love to learn more. If you have any helpful information, I would be very grateful for your feedback.
+I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would love to learn more.
 
 # What is a Curlicue fractal?
-> $$\text{A curlicue fractal may result from a plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
-> $$\text{where } R(n) \text{ is an arbitrary function which produces a rotation.}$$
-*(My own attempt at a generalized definition, which this article will attempt to defend)*
+> $$\text{Where the function } R(n) \text{ returns a rotation,}$$
+> $$\\text{the plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+> $$\text{will exhibit chaotic behavior if } R(n) \bmod 1 \text{ is not periodic,}$$
+> $$\text{otherwise will repeat a potentially intricate pattern}.$$
+*(My attempt at a generalized definition)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
-If the preceding formula causes some confusion, I hope to demonstrate that it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there is a common theme:
+The preceding formula can model a more intuitive system, and I hope to demonstrate that it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there is a common theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
-2. Starting from some origin point (typically $`(0, 0)`$), draw a line from this point at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
+2. Starting from some origin point (typically $`(0, 0)`$), draw a line at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
 4. Repeat this process, drawing a line from the previous line, each at an angle determined by $`θ(n)`$ (where $`n`$ cooresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
 5. Stop this process once a maximum $`n`$ value, $`m`$, is reached.
@@ -25,7 +27,7 @@ The resulting plot can vary significantly depening on the $`θ(n)`$ function. So
 
 ## Example
 1. Define a very simple theta function: $$θ(n)=n$$
-2. Let $`r=100`$ to assist in visualization.
+2. Let $`r=100`$.
 3. Start at the origin $`(0, 0)`$:
 
 ![e1](media/e1.png)
@@ -46,7 +48,7 @@ The resulting plot can vary significantly depening on the $`θ(n)`$ function. So
 
 ![e5](media/e5.png)
 
-Although interesting, this $`θ(n)`$ function is very simple and the resulting circular "*Spirograph*" pattern never deviates. A much more complex plot can be produced by simply squaring $`n`$, resulting in the function: $$θ(n)=n^2$$
+Although interesting, this $`θ(n)`$ function is very simple and the resulting circular "*Spirograph*" pattern never deviates. A much more complex plot can be produced by simply squaring $`n`$, expressed as the function: $$θ(n)=n^2$$
 
 The following plot is produced by this function:
 

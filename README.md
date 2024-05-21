@@ -118,7 +118,7 @@ From here, we can use [modulus conversion](https://github.com/sonofthort/Modular
 The modulo operands are now integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
 ($`a \bmod b`$ is technically redundant, since $`0 \leq a \lt b`$)
 
-As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$.
+As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. Is it possible that there are additional periods due to multiplication by $`a`$?
 
 An algebraic approach can also be employed to determine the periodicity of this function. Solve for all $`p`$ (period) values: $$a n \equiv a (n + p) \pmod b$$
 From the [Wikipedia modular arithmetic article](https://en.wikipedia.org/wiki/Modular_arithmetic#Basic_properties), we have the following:

@@ -111,7 +111,7 @@ For negative $`k`$ value mapping, we can refer to [these relationships](https://
 
 ### Rational $`k`$ values
 In the case that k is a rational number, $`k`$ can be expressed as $$k=a/b$$
-where $`a`$ and $`b`$ are coprime integers ($`a/b`$ is a reduced fraction), and where $`b \neq 0`$ and $`a \lt b`$.
+where $`a`$ and $`b`$ are positive coprime integers ($`a/b`$ is a reduced fraction), and where $`b \neq 0`$ and $`a \lt b`$.
 
 We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
 From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion): $$a n / b \bmod 1=(a n \bmod b) / b$$

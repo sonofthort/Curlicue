@@ -3,16 +3,16 @@ An exploration of curlicue fractals, with accompanying code.
 
 ![face1](media/face2.png "\"The Face\"")
 
-As an amatuer mathematician/enthusiast, I've found it difficult to piece together curlicue fractal information. However, the learning process is rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to link and present information.
+As an amatuer mathematician/enthusiast, I've found it difficult to piece together curlicue fractal information. However, the learning process is rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to link and consolidate information.
 
-I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would love to learn more.
+I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would very much appreciate feedback.
 
 # What is a Curlicue fractal?
 > $$\text{Where the function } R(n) \text{ returns a rotation, the plot of each term of}$$
 > $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
 > $$\text{may exhibit chaotic behavior if } R(n) \bmod 1 \text{ is not periodic,}$$
-> $$\text{otherwise will repeat a potentially intricate pattern after } p \text{ terms,}$$
-> $$\text{where } p \text{ is the period of } R(n) \text{.}$$
+> $$\text{otherwise will repeat a potentially intricate pattern after } P \text{ terms}$$
+> $$\text{(where } P \text{ is the period of } R(n) \text{).}$$
 *(An attempt at a generalized definition)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")

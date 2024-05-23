@@ -49,7 +49,7 @@ The resulting plot can vary significantly based on the $`θ(n)`$ function. Some 
 
 ![e5](media/e5.png)
 
-Although interesting, this $`θ(n)`$ function is very simple and the resulting circular "*Spirograph*" pattern never deviates. A much more complex plot can be produced by simply squaring $`n`$, expressed as the function: $$θ(n)=n^2$$
+Although interesting, this $`θ(n)`$ function is very simple and the resulting "*Spirograph*" pattern will continue to overlap, approaching a perfect circle. A much more complex plot results from simply squaring $`n`$, expressed as the function: $$θ(n)=n^2$$
 
 The following plot is produced by this function:
 
@@ -58,6 +58,8 @@ The following plot is produced by this function:
 When "zoomed out" ($`r=1`$), the resulting pattern can be seen on a much larger scale ($`m=1000000`$):
 
 ![e6](media/e7.png "θ(n)=n ^ 2")
+
+Spiral "curlicue" patterns emerge, and appear to exist at several scales. Large spirals are composed of linked smaller spirals. Perhaps this process continues infinitely at larger and larger scales.
 
 # Relation to Euler's formula
 Euler's formula is given by: $$e^{i θ}=\cos θ + i \sin θ$$

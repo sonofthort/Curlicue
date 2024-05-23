@@ -8,8 +8,8 @@ As an amatuer mathematician/enthusiast, I've found it difficult to piece togethe
 I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would love to learn more.
 
 # What is a Curlicue fractal?
-> $$\text{Where the function } R(n) \text{ returns a rotation,}$$
-> $$\\text{the plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+> $$\text{Where the function } R(n) \text{ returns a rotation, the plot of each term of}$$
+> $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
 > $$\text{may exhibit chaotic behavior if } R(n) \bmod 1 \text{ is not periodic,}$$
 > $$\text{otherwise will repeat a potentially intricate pattern after } p \text{ terms,}$$
 > $$\text{where } p \text{ is the period of } R(n) \text{.}$$
@@ -71,13 +71,13 @@ $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
 This can also be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
 $`r`$ can then be extracted: $$r \displaystyle\sum_{n=1}^m e^{i θ(n)}$$
-This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed: $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i θ(n)} \text{, where } θ(n) \text{ is an arbitrary function which produces an angle.}$$
+This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed: $$\text{A curlicue fractal may result from the plot of each term of } \displaystyle\sum_{n=1}^m e^{i θ(n)} \text{, where } θ(n) \text{ is a function which produces an angle.}$$
 
 # Revolutions vs. radians
 Revolutions can sometimes be simpler to work with and more intiuative than radians.
 
 In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can multiply its result by $`2 \pi`$ to convert to radians: $$2 \pi θ(n)$$
-Since $`θ(n)`$ no longer returns an angle in this example, we can instead use the name $`R(n)`$ for functions which produce a rotation. The previous summation can then be written as: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+Since $`θ(n)`$ no longer returns an angle in this case, we can instead use the name $`R(n)`$ for functions which produce a rotation. The previous summation can then be written as: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
 
 As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other sources, dating back to Gauss sums (and possibly earlier).
 
@@ -93,24 +93,40 @@ Although this seemingly complicates the sums without changing their behavior, no
 
 [This article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 
-[The Wikipedia article on modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) will also be of help here.
+[The Wikipedia article on modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) also contains helpful formulas and identities. 
 
 # Analysis of specific $`θ(n)`$ functions
 In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, but also share some characteristics and analysis methodologies.
 
 Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
 
+## Analysis of $`R(n)=k`$
+Let $`k`$ be an arbitrary real number. This is the simplest form of $`R(n)`$ functions.
+
+Give: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+Substituting $`R(n)`$ with $`k`$ yields: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi k}$$
+The summation function $`e^{i 2 \pi k}`$ is a constant, therefore: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi k} = m e^{i 2 \pi k}$$
+The resulting plot will simply be that of a line of length $`m`$ from the origin, at an angle of $`2 \pi k`$.
+
+(TODO, show image)
+
+### Range of $`k`$
+Recall that an implicit modulo operation can be explicitly added to a rotation function: $$R(n)=k \bmod 1$$
+This shows that only values within $`0 \leq k < 1`$ are of interest, as values outside of this range map to values within this range by $`\bmod 1`$.
+
+In other words, all angles $`0 \leq θ < 2 \pi`$ can be represented by $`0 \leq k < 1`$.
+
+For negative $`k`$ value mapping, we can refer to [these relationships](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#negative-numbers) to show that $`-k \bmod 1 = \lceil k \rceil - k`$.
+
 ## Analysis of $`R(n)=k n`$
-This is perhaps the simplest form of $`R(n)`$ functions. Let $`k`$ be an arbitrary real number.
+Let $`k`$ be an arbitrary real number.
 
 ### Range of $`k`$
 Since modulation can be applied to $`R(n)`$ functions, the function can be rewritten as: $$R(n)=k n \bmod 1$$
 
 From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$R(n)=(k \bmod 1) n \bmod 1$$
 
-This shows that only values $`0 <= k < 1`$ are of interest, since values outside of this range map to values within this range by $`\bmod 1`$.
-
-For negative $`k`$ value mapping, we can refer to [these relationships](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#negative-numbers) to show that: $$-k \bmod 1 = \lceil k \rceil - k$$
+This shows that only values within $`0 \leq k < 1`$ are of interest, since values outside of this range map to values within this range by $`\bmod 1`$.
 
 ### Rational $`k`$ values
 In the case that k is a rational number, $`k`$ can be expressed as $$k=a/b$$
@@ -123,7 +139,8 @@ The modulo operands are now integers, so an [integer modular multiplication rule
 
 As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. Is it possible that there are additional periods due to multiplication by $`a`$?
 
-An algebraic approach can also be employed to determine the periodicity of this function. Solve for all $`p`$ (period) values: $$a n \equiv a (n + p) \pmod b$$
+An algebraic approach can also be employed to determine the periodicity of this function. A period for a given function can be expressed as:$$f(x) = f(x + p) \text{, where } p \text{ is a period}$$
+Apply this to our function, solve for all $`p`$ values: $$a n \equiv a (n + p) \pmod b$$
 From the [Wikipedia modular arithmetic article](https://en.wikipedia.org/wiki/Modular_arithmetic#Basic_properties), we have the following:
 
 > $$\text{If }a + k \equiv b + k \pmod m \text{, where } k \text{ is any integer, then } a \equiv b \pmod m \text{. (1)}$$

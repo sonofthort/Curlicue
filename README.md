@@ -185,7 +185,7 @@ TODO, should always result in a circle of some radius based on k.
 ## Analysis of $`R(n)=R(n-1) + k n ^ 2`$
 - TODO
 
-# Application to music
+# Musical application
 - TODO
 
 # Relation to Gauss sums and theta functions

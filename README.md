@@ -5,7 +5,7 @@ An exploration of curlicue fractals, with accompanying code.
 
 As an amatuer mathematician/enthusiast, I've found it difficult to piece together curlicue fractal information. However, the learning process is rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to consolidate and link information.
 
-I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would very much appreciate feedback. These findings include a generalized definition, analysis of specific functions which work within this definition, the concept of the endpoint set, and even musical application.
+I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would very much appreciate feedback. These findings include a generalized definition, analysis of specific functions which work within this definition, the concept of the endpoint set, and musical application.
 
 # What is a Curlicue fractal?
 > $$\text{Where the function } R(n) \text{ returns a rotation, the plot of each term of}$$

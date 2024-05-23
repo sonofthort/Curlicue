@@ -24,7 +24,7 @@ The preceding formula can model a more intuitive system, and I hope to demonstra
 4. Repeat this process, drawing a line from the previous line, each at an angle determined by $`θ(n)`$ (where $`n`$ cooresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
 5. Stop this process once a maximum $`n`$ value, $`m`$, is reached.
 
-The resulting plot can vary significantly depening on the $`θ(n)`$ function. Some functions can produce chaotic/fractal patterns, while others can produce bounded or simple plots.
+The resulting plot can vary significantly based on the $`θ(n)`$ function. Some can produce patterns which are chaotic/fractal, while others produce patterns which are bounded/simple.
 
 ## Example
 1. Define a simple theta function: $$θ(n)=n$$

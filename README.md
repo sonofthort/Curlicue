@@ -84,7 +84,7 @@ As it turns out, this is a helpful abstraction for the analysis of curlicue patt
 # Relation to modular arithmetic
 There is an implicit modulo operation occuring within these summations.
 
-The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will be used within $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
+The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will ultimately be used within $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
 The implicit modulos within these sums can be explicitly added without affecting their results:
 $$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \bmod{2 \pi})}$$
 $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \bmod 1)}$$
@@ -93,7 +93,7 @@ Although this seemingly complicates the sums without changing their behavior, no
 
 [This article on modular arithmetic](https://github.com/sonofthort/Modular-Arithmetic) contains formulas which can be useful during analysis and which are referenced in this article.
 
-[The Wikipedia article on modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) also contains helpful formulas and identities. 
+[The Wikipedia article on modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) also contains many helpful formulas and identities. 
 
 # Analysis of specific $`θ(n)`$ functions
 In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, but also share some characteristics and analysis methodologies.
@@ -114,7 +114,7 @@ The resulting plot will simply be that of a line of length $`m`$ from the origin
 Recall that an implicit modulo operation can be explicitly added to a rotation function: $$R(n)=k \bmod 1$$
 This shows that only values within $`0 \leq k < 1`$ are of interest, as values outside of this range map to values within this range by $`\bmod 1`$.
 
-In other words, all angles $`0 \leq θ < 2 \pi`$ can be represented by $`0 \leq k < 1`$.
+In other words, all angles $`0 \leq θ < 2 \pi`$ are represented by $`0 \leq k < 1`$.
 
 For negative $`k`$ value mapping, we can refer to [these relationships](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#negative-numbers) to show that $`-k \bmod 1 = \lceil k \rceil - k`$.
 
@@ -122,11 +122,11 @@ For negative $`k`$ value mapping, we can refer to [these relationships](https://
 Let $`k`$ be an arbitrary real number.
 
 ### Range of $`k`$
-Since modulation can be applied to $`R(n)`$ functions, the function can be rewritten as: $$R(n)=k n \bmod 1$$
+Applying the implicit modulation to this function yields: $$R(n)=k n \bmod 1$$
 
 From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$R(n)=(k \bmod 1) n \bmod 1$$
 
-This shows that only values within $`0 \leq k < 1`$ are of interest, since values outside of this range map to values within this range by $`\bmod 1`$.
+This again shows that only values within $`0 \leq k < 1`$ are of interest.
 
 ### Rational $`k`$ values
 In the case that k is a rational number, $`k`$ can be expressed as $$k=a/b$$
@@ -137,10 +137,12 @@ From here, we can use [modulus conversion](https://github.com/sonofthort/Modular
 The modulo operands are now integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
 ($`a \bmod b`$ is technically redundant, since $`0 \leq a \lt b`$)
 
-As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will have a period of $`b`$. Is it possible that there are additional periods due to multiplication by $`a`$?
+As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will at least have period of $`b`$. Could a smaller period than $`b`$ exist due to multiplication by $`a`$?
 
-An algebraic approach can also be employed to determine the periodicity of this function. A period for a given function can be expressed as:$$f(x) = f(x + p) \text{, where } p \text{ is a period}$$
-Apply this to our function, solve for all $`p`$ values: $$a n \equiv a (n + p) \pmod b$$
+An algebraic approach can also be employed to determine the periodicity of this function. A periodic function can be expressed as: $$f(x) = f(x + P) \text{, where } P \text{ is the period of the function}$$
+(See [Periodic function, Wikipedia](https://en.wikipedia.org/wiki/Periodic_function))
+
+Applying this to our function, solve for all $`P`$ values: $$a n \equiv a (n + P) \pmod b$$
 From the [Wikipedia modular arithmetic article](https://en.wikipedia.org/wiki/Modular_arithmetic#Basic_properties), we have the following:
 
 > $$\text{If }a + k \equiv b + k \pmod m \text{, where } k \text{ is any integer, then } a \equiv b \pmod m \text{. (1)}$$
@@ -148,19 +150,19 @@ From the [Wikipedia modular arithmetic article](https://en.wikipedia.org/wiki/Mo
 > $$\text{If }k a \equiv k b \pmod m \text{ and } k \text{ is coprime with } m \text{, then } a \equiv b \pmod m \text{. (2)}$$
 
 Attempt to apply these rules to cancel out terms:
-- $`a n \equiv a (n + p) \pmod b`$
-- $`a n \equiv a n + a p \pmod b`$
+- $`a n \equiv a (n + P) \pmod b`$
+- $`a n \equiv a n + a P \pmod b`$
 - This matches the form of rule (1), where $`a n`$ is the common term. Apply this rule.
-- $`0 + a n \equiv a p + a n \pmod b`$
-- $`0 \equiv a p \pmod b`$
+- $`0 + a n \equiv a P + a n \pmod b`$
+- $`0 \equiv a P \pmod b`$
 - This now matches the form of the rule (2), where $`a`$ is the common term. Apply this rule.
-- $`a 0 \equiv a p \pmod b`$
-- $`0 = p \pmod b`$
+- $`a 0 \equiv a P \pmod b`$
+- $`0 = P \pmod b`$
 
-Solving for $`p`$ yields every integer multiple of $`b`$, hence the period is $`b`$.
+Solving for $`P`$ yields every integer multiple of $`b`$, hence the minimum non-zero period is $`b`$.
 
 ### Irrational $`k`$ values
-This is a very handwavy "proof", but any irrational number $`k`$ can be approximated as a rational number (fraction) by $`k \approx \lfloor k z \rfloor / z`$, where $`z`$ is an integer.
+This is a very handwavy demonstration and not a proof, but any irrational number $`k`$ can be approximated as a rational number (fraction) by $`k \approx \lfloor k z \rfloor / z`$, where $`z`$ is an integer.
 
 As $`z`$ approaches $`\infty`$, the approximation error approaches $`0`$. In theory, the approximation becomes equivalent to $`k`$ at $`z = \infty`$.
 $$\lim_{z\to\infty} k - \lfloor k z \rfloor / z = 0$$

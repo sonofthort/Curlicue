@@ -10,9 +10,10 @@ I would also like to present some of my own findings, which could very well dupl
 # What is a Curlicue fractal?
 > $$\text{Where the function } R(n) \text{ returns a rotation,}$$
 > $$\\text{the plot of each term of } \displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
-> $$\text{will exhibit chaotic behavior if } R(n) \bmod 1 \text{ is not periodic,}$$
-> $$\text{otherwise will repeat a potentially intricate pattern}.$$
-*(My attempt at a generalized definition)*
+> $$\text{may exhibit chaotic behavior if } R(n) \bmod 1 \text{ is not periodic,}$$
+> $$\text{otherwise will repeat a potentially intricate pattern after } p \text{ terms,}$$
+> $$\text{where } p \text{ is the period of } R(n) \text{.}$$
+*(An attempt at a generalized definition)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
@@ -26,7 +27,7 @@ The preceding formula can model a more intuitive system, and I hope to demonstra
 The resulting plot can vary significantly depening on the $`θ(n)`$ function. Some functions can produce chaotic/fractal patterns, while others can produce bounded or simple plots.
 
 ## Example
-1. Define a very simple theta function: $$θ(n)=n$$
+1. Define a simple theta function: $$θ(n)=n$$
 2. Let $`r=100`$.
 3. Start at the origin $`(0, 0)`$:
 
@@ -54,7 +55,7 @@ The following plot is produced by this function:
 
 ![e6](media/e6.png)
 
-When "zoomed out" ($`r=1`$), the resulting pattern can be seen on a much larger scale ($`m=1000000`$, and with a coloring scheme applied):
+When "zoomed out" ($`r=1`$), the resulting pattern can be seen on a much larger scale ($`m=1000000`$):
 
 ![e6](media/e7.png "θ(n)=n ^ 2")
 
@@ -65,11 +66,11 @@ $$x_{0}=0$$
 $$y_{0}=0$$
 $$x_{n}=x_{n - 1} + r \cos{θ(n)}$$
 $$y_{n}=y_{n - 1} + r \sin{θ(n)}$$
-This moving endpoint can instead be expressed as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plotted on the complex plane), and Euler's formula can further simplify this expression:
+This moving endpoint can instead be expressed as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plotted on the complex plane), and Euler's formula can further simplify the expression:
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
-From this, a given point $`p`$ for a cooresponding $`n`$ value, $`m`$, can be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
-$`r`$ can then be extracted using the rules of summation: $$r \displaystyle\sum_{n=1}^m e^{i θ(n)}$$
+This can also be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
+$`r`$ can then be extracted: $$r \displaystyle\sum_{n=1}^m e^{i θ(n)}$$
 This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed: $$\text{The curlicue fractal is a plot of each term of } \displaystyle\sum_{n=1}^m e^{i θ(n)} \text{, where } θ(n) \text{ is an arbitrary function which produces an angle.}$$
 
 # Revolutions vs. radians

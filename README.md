@@ -25,7 +25,7 @@ The preceding formula can model a more intuitive system, and I hope to demonstra
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
-4. Repeat this process, drawing a line from the previous line, each at an angle determined by $`θ(n)`$ (where $`n`$ cooresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
+4. Repeat this process, drawing a line from the end of the previous line, each at an angle determined by $`θ(n)`$ (where $`n`$ cooresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
 5. Stop this process once a maximum $`n`$ value, $`m`$, is reached.
 
 The resulting plot can vary significantly based on the $`θ(n)`$ function. Some can produce patterns which are chaotic/fractal, while others produce patterns which are bounded/simple.

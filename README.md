@@ -7,7 +7,7 @@ As an amatuer mathematician/enthusiast, I've found it difficult to piece togethe
 
 I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would very much appreciate feedback. These findings include:
 - A generalized definition
-- Analysis of specific functions which work within this definition
+- Analysis of specific functions
 - The concept of an endpoint set
 - Musical application
 

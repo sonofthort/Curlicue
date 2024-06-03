@@ -66,7 +66,7 @@ When "zoomed out" ($`r=1`$), the resulting pattern can be seen on a much larger 
 Spiral "curlicue" patterns emerge, and appear to exist at several scales. Large spirals are composed of linked smaller spirals. Perhaps this process continues infinitely at larger and larger scales.
 
 # Relation to Euler's formula
-Euler's formula is given by: $$e^{i θ}=\cos θ + i \sin θ$$
+Euler's formula is expressed as: $$e^{i θ}=\cos θ + i \sin θ$$
 In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. A line is drawn from the previous endpoint at an angle $`θ`$ calculated by $`θ(n)`$. A given endpoint can be expressed as a sum of previous endpoints:
 $$x_{0}=0$$
 $$y_{0}=0$$

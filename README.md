@@ -11,17 +11,23 @@ I would also like to present some of my own findings, which could very well dupl
 - The concept of an endpoint set
 - Musical application
 
+# Contributions
+I hope for this article to be a community effort and to gain feedback from those interested. If you do have any feedback, improvement suggestions, or expansion suggestions, please feel free to raise an issue or to create a pull request, and I will ensure that proper attribution is made.
+
+# Code
+The supplied code is in C++. As there are only a few files, and various methods for linking SDL2, I have not provided any project or build files. Setup in your environemnt of choice should be simple. See https://wiki.libsdl.org/SDL2/Installation.
+
 # What is a Curlicue fractal?
 > $$\text{Where the function } R(n) \text{ returns a rotation, the plot of each term of}$$
-> $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+> $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
 > $$\text{may exhibit chaotic behavior if } R(n) \bmod 1 \text{ is not periodic,}$$
-> $$\text{otherwise will repeat a potentially intricate pattern after } P \text{ terms}$$
+> $$\text{otherwise will repeat a potentially intricate, fractal-like pattern after } P \text{ terms}$$
 > $$\text{(where } P \text{ is the period of } R(n) \text{).}$$
 *(An attempt at a generalized definition)*
  
 ![e8](media/e8.png "θ(n)=39 * n ^ 2")
 
-The preceding formula can model a more intuitive system, and I hope to demonstrate that it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there is a common theme:
+The preceding formula models a more intuitive system, and I hope to demonstrate that it is derived from a simple process. Multiple approaches can generate what are described as curlicue fractals. However, there is a common theme:
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
@@ -75,25 +81,25 @@ $$y_{n}=y_{n - 1} + r \sin{θ(n)}$$
 This moving endpoint can instead be expressed as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plotted on the complex plane), and Euler's formula can further simplify the expression:
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
-This can also be expressed as a summation: $$p_{m}=\displaystyle\sum_{n=1}^m r e^{i θ(n)}$$
-$`r`$ can then be extracted: $$r \displaystyle\sum_{n=1}^m e^{i θ(n)}$$
-This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed: $$\text{A curlicue fractal may result from the plot of each term of } \displaystyle\sum_{n=1}^m e^{i θ(n)} \text{, where } θ(n) \text{ is a function which produces an angle.}$$
+This can also be expressed as a summation: $$p_{N}=\displaystyle\sum_{n=1}^N r e^{i θ(n)}$$
+$`r`$ can then be extracted: $$r \displaystyle\sum_{n=1}^N e^{i θ(n)}$$
+This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed: $$\text{A curlicue fractal may result from the plot of each term of } \displaystyle\sum_{n=1}^N e^{i θ(n)} \text{, where } θ(n) \text{ is a function which produces an angle.}$$
 
 # Revolutions vs. radians
 Revolutions can sometimes be simpler to work with and more intiuative than radians.
 
 In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can multiply its result by $`2 \pi`$ to convert to radians: $$2 \pi θ(n)$$
-Since $`θ(n)`$ no longer returns an angle in this case, we can instead use the name $`R(n)`$ for functions which produce a rotation. The previous summation can then be written as: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
+Since $`θ(n)`$ no longer returns an angle in this case, we can instead use the name $`R(n)`$ for functions which produce a rotation. The previous summation can then be written as: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
 
-As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other sources, dating back to Gauss sums (and possibly earlier).
+As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other work, dating back to Gauss sums (and possibly earlier).
 
 # Relation to modular arithmetic
 There is an implicit modulo operation occuring within these summations.
 
 The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will ultimately be used within $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
 The implicit modulos within these sums can be explicitly added without affecting their results:
-$$\displaystyle\sum_{n=1}^m e^{i θ(n)}=\displaystyle\sum_{n=1}^m e^{i (θ(n) \bmod{2 \pi})}$$
-$$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^m e^{i 2 \pi (R(n) \bmod 1)}$$
+$$\displaystyle\sum_{n=1}^N e^{i θ(n)}=\displaystyle\sum_{n=1}^N e^{i (θ(n) \bmod{2 \pi})}$$
+$$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^N e^{i 2 \pi (R(n) \bmod 1)}$$
 
 Although this seemingly complicates the sums without changing their behavior, noting this relationship lends itself to analysis, and also has implications for computation (as modular arithmetic may be employed to circumvent potential limits of a computer's numerical representation system).
 
@@ -109,12 +115,10 @@ Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions,
 ## Analysis of $`R(n)=k`$
 Let $`k`$ be an arbitrary real number. This is the simplest form of $`R(n)`$ functions.
 
-Give: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$
-Substituting $`R(n)`$ with $`k`$ yields: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi k}$$
-The summation function $`e^{i 2 \pi k}`$ is a constant, therefore: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi k} = m e^{i 2 \pi k}$$
-The resulting plot will simply be that of a line of length $`m`$ from the origin, at an angle of $`2 \pi k`$.
-
-(TODO, show image)
+Given: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
+Substituting $`R(n)`$ with $`k`$ yields: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi k}$$
+The summation function $`e^{i 2 \pi k}`$ is a constant, therefore: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi k} = N e^{i 2 \pi k}$$
+The resulting plot will simply be that of a line of length $`N`$ from the origin, at an angle of $`2 \pi k`$.
 
 ### Range of $`k`$
 Recall that an implicit modulo operation can be explicitly added to a rotation function: $$R(n)=k \bmod 1$$
@@ -177,7 +181,7 @@ $$\lim_{z\to\infty} \lfloor k z \rfloor / z = k$$
 In this way, an irrational number can be thought of as a fraction of infinitely large terms. Irrational $`k`$ values should result in a period of $`\infty`$. In other words, the function is not periodic.
 
 ### Describing the plot
-TODO, should always result in a circle of some radius based on k.
+The plot always result in a circle of some radius based on $`k`$. TODO: demonstrate how the radius can be derived from $`k`$. 
 
 ## Analysis of $`R(n)=k n^2`$
 - TODO
@@ -189,7 +193,7 @@ TODO, should always result in a circle of some radius based on k.
 - TODO
 
 # Relation to Gauss sums and theta functions
-Although I would like to further explore and document these relations (while attemping to fill my knowledge gaps in the process), it's worth noting that summations which are similar to: $$\displaystyle\sum_{n=1}^m e^{i 2 \pi R(n)}$$ can be found referenced in materials pertaining to Gauss sums and theta functions:
+Although I would like to further explore and document these relations (while attemping to fill my knowledge gaps in the process), it's worth noting that summations which are similar to: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$ can be found referenced in materials pertaining to Gauss sums and theta functions:
 - [Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Gauss_sum)
 - [Quadratic Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Quadratic_Gauss_sum)
 - [Theta function (Wikipedia)](https://en.wikipedia.org/wiki/Theta_function)

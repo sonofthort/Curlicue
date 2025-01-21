@@ -274,7 +274,7 @@ and with an $`N`$ value of $`4`$, the following set is obtained (points plotted 
 
 ![face1](media/face2.png "\"The Face\"")
 
-This particular plot has several similarities to a human face, including eyes, eyeballs, mouth, nose, nostrils, ears, a jawline, a chin, the outline of a head, and something resembling an Alex Grey-esque brain (?) which connects and centralizes all other features of the face. Perhaps this is a funny coincendence, or some strange cosmic easter egg.
+This particular plot has several similarities to a human face, including eyes, eyeballs, mouth, nose, nostrils, ears, a jawline, a chin, the outline of a head, and something resembling an Alex Grey-esque brain (?) which connects and centralizes all other features of the face. Perhaps this is a funny coincendence, or some strange cosmic Easter egg.
 
 One might ask if there is any particular significance to the constant $`N=4`$ in this plot. As plots are observed with increasingly large $`N`$ values, there seems to be some evolution towards more complex facial features, until this effect is maximized at $`N=4`$. Beyond this, the facial features become increasingly more "alien", and soon completely fade from perception.
 

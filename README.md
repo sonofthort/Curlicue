@@ -252,7 +252,7 @@ The plot always result in a circle of some radius based on $`k`$. TODO: demonstr
 - More formal description/analysis TODO
 
 # Relation to Gauss sums and theta functions
-Although I would like to further explore and document these relations (while attemping to fill my knowledge gaps in the process), it's worth noting that summations which are similar to: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$ can be found referenced in materials pertaining to Gauss sums and theta functions:
+Although I would like to further understand and document these relations, it's worth noting that summations which are similar to: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$ can be found referenced in materials relating to Gauss sums and theta functions:
 - [Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Gauss_sum)
 - [Quadratic Gauss sum (Wikipedia)](https://en.wikipedia.org/wiki/Quadratic_Gauss_sum)
 - [Theta function (Wikipedia)](https://en.wikipedia.org/wiki/Theta_function)

@@ -5,7 +5,7 @@ An exploration of curlicue fractals, with accompanying code.
 
 As an amatuer mathematician/enthusiast, I've found it difficult to piece together curlicue fractal information. However, the learning process is rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to consolidate and link information.
 
-I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would very much appreciate feedback. These findings include:
+I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would very much appreciate feedback! These findings include:
 - A generalized definition
 - Analysis of specific functions
 - The concept of an endpoint set
@@ -69,35 +69,59 @@ When "zoomed out" ($`r=1`$), the resulting pattern can be seen on a much larger 
 
 ![e6](media/e7.png "θ(n)=n ^ 2")
 
-Spiral "curlicue" patterns emerge, and appear to exist at several scales. Large spirals are composed of linked smaller spirals. Perhaps this process continues infinitely at larger and larger scales.
+Spiral "curlicue" patterns emerge, and appear to exist at several scales. Large spirals are composed of linked smaller spirals. Perhaps this process continues indefinitely at larger and larger scales.
 
 # Relation to Euler's formula
-Euler's formula is expressed as: $$e^{i θ}=\cos θ + i \sin θ$$
+Euler's formula is expressed as:
+
+$$e^{i θ}=\cos θ + i \sin θ$$
+
 In the curlicue fractal process described previously, lines and points are drawn on a two dimensional plane. A line is drawn from the previous endpoint at an angle $`θ`$ calculated by $`θ(n)`$. A given endpoint can be expressed as a sum of previous endpoints:
+
 $$x_{0}=0$$
 $$y_{0}=0$$
 $$x_{n}=x_{n - 1} + r \cos{θ(n)}$$
 $$y_{n}=y_{n - 1} + r \sin{θ(n)}$$
+
 This moving endpoint can instead be expressed as a complex number, where $`x`$ is the real part, and $`y`$ is the imaginary part (and instead plotted on the complex plane), and Euler's formula can further simplify the expression:
+
 $$p_{0}=0$$
 $$p_{n}=p_{n - 1} + r e^{i θ(n)}$$
-This can also be expressed as a summation: $$p_{N}=\displaystyle\sum_{n=1}^N r e^{i θ(n)}$$
-$`r`$ can then be extracted: $$r \displaystyle\sum_{n=1}^N e^{i θ(n)}$$
-This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed: $$\text{A curlicue fractal may result from the plot of each term of } \displaystyle\sum_{n=1}^N e^{i θ(n)} \text{, where } θ(n) \text{ is a function which produces an angle.}$$
+
+This can also be expressed as a summation:
+
+$$p_{N}=\displaystyle\sum_{n=1}^N r e^{i θ(n)}$$
+
+$`r`$ can then be extracted:
+
+$$r \displaystyle\sum_{n=1}^N e^{i θ(n)}$$
+
+This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no bearing on the summation and the resulting plot. $`r`$ can be removed, and the following can be succinctly expressed:
+
+$$\text{A curlicue fractal may result from the plot of each term of } \displaystyle\sum_{n=1}^N e^{i θ(n)} \text{, where } θ(n) \text{ is a function which produces an angle.}$$
 
 # Revolutions vs. radians
 Revolutions can sometimes be simpler to work with and more intiuative than radians.
 
-In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can multiply its result by $`2 \pi`$ to convert to radians: $$2 \pi θ(n)$$
-Since $`θ(n)`$ no longer returns an angle in this case, we can instead use the name $`R(n)`$ for functions which produce a rotation. The previous summation can then be written as: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
+In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can multiply its result by $`2 \pi`$ to convert to radians:
+
+$$2 \pi θ(n)$$
+
+Since $`θ(n)`$ no longer returns an angle in this case, we can instead use the name $`R(n)`$ for functions which produce a rotation. The previous summation can then be written as:
+
+$$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
 
 As it turns out, this is a helpful abstraction for the analysis of curlicue patterns, and is common in other work, dating back to Gauss sums (and possibly earlier).
 
 # Relation to modular arithmetic
 There is an implicit modulo operation occuring within these summations.
 
-The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will ultimately be used within $`\sin`$ and $`\cos`$, since: $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
+The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ respectively can be greater than $`2 \pi`$ or $`1`$, and can also be less than $`0`$. Modulation can be applied to these values since they will ultimately be used within $`\sin`$ and $`\cos`$, since:
+
+$$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
+
 The implicit modulos within these sums can be explicitly added without affecting their results:
+
 $$\displaystyle\sum_{n=1}^N e^{i θ(n)}=\displaystyle\sum_{n=1}^N e^{i (θ(n) \bmod{2 \pi})}$$
 $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^N e^{i 2 \pi (R(n) \bmod 1)}$$
 
@@ -115,13 +139,25 @@ Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions,
 ## Analysis of $`R(n)=k`$
 Let $`k`$ be an arbitrary real number. This is the simplest form of $`R(n)`$ functions.
 
-Given: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
-Substituting $`R(n)`$ with $`k`$ yields: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi k}$$
-The summation function $`e^{i 2 \pi k}`$ is a constant, therefore: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi k} = N e^{i 2 \pi k}$$
+Given:
+
+$$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
+
+Substituting $`R(n)`$ with $`k`$ yields:
+
+$$\displaystyle\sum_{n=1}^N e^{i 2 \pi k}$$
+
+The summation function $`e^{i 2 \pi k}`$ is a constant, therefore:
+
+$$\displaystyle\sum_{n=1}^N e^{i 2 \pi k} = N e^{i 2 \pi k}$$
+
 The resulting plot will simply be that of a line of length $`N`$ from the origin, at an angle of $`2 \pi k`$.
 
 ### Range of $`k`$
-Recall that an implicit modulo operation can be explicitly added to a rotation function: $$R(n)=k \bmod 1$$
+Recall that an implicit modulo operation can be explicitly added to a rotation function:
+
+$$R(n)=k \bmod 1$$
+
 This shows that only values within $`0 \leq k < 1`$ are of interest, as values outside of this range map to values within this range by $`\bmod 1`$.
 
 In other words, all angles $`0 \leq θ < 2 \pi`$ are represented by $`0 \leq k < 1`$.
@@ -132,27 +168,49 @@ For negative $`k`$ value mapping, we can refer to [these relationships](https://
 Let $`k`$ be an arbitrary real number.
 
 ### Range of $`k`$
-Applying the implicit modulation to this function yields: $$R(n)=k n \bmod 1$$
+Applying the implicit modulation to this function yields:
 
-From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$R(n)=(k \bmod 1) n \bmod 1$$
+$$R(n)=k n \bmod 1$$
+
+From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied:
+
+$$R(n)=(k \bmod 1) n \bmod 1$$
 
 This again shows that only values within $`0 \leq k < 1`$ are of interest.
 
 ### Rational $`k`$ values
-In the case that k is a rational number, $`k`$ can be expressed as $$k=a/b$$
+In the case that k is a rational number, $`k`$ can be expressed as
+
+$$k=a/b$$
+
 where $`a`$ and $`b`$ are positive coprime integers ($`a/b`$ is a reduced fraction), and where $`b \neq 0`$ and $`a \lt b`$.
 
-We can then rewrite $`R(n)`$ as: $$R(n)=a n / b \bmod 1$$
-From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion): $$a n / b \bmod 1=(a n \bmod b) / b$$
-The modulo operands are now integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied: $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
+We can then rewrite $`R(n)`$ as:
+
+$$R(n)=a n / b \bmod 1$$
+
+From here, we can use [modulus conversion](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#modulus-conversion):
+
+$$a n / b \bmod 1=(a n \bmod b) / b$$
+
+The modulo operands are now integers, so an [integer modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied:
+
+$$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
+
 ($`a \bmod b`$ is technically redundant, since $`0 \leq a \lt b`$)
 
 As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will at least have period of $`b`$. Could a smaller period than $`b`$ exist due to multiplication by $`a`$?
 
-An algebraic approach can also be employed to determine the periodicity of this function. A periodic function can be expressed as: $$f(x) = f(x + P) \text{, where } P \text{ is the period of the function}$$
+An algebraic approach can also be employed to determine the periodicity of this function. A periodic function can be expressed as:
+
+$$f(x) = f(x + P) \text{, where } P \text{ is the period of the function}$$
+
 (See [Periodic function, Wikipedia](https://en.wikipedia.org/wiki/Periodic_function))
 
-Applying this to our function, solve for all $`P`$ values: $$a n \equiv a (n + P) \pmod b$$
+Applying this to our function, solve for all $`P`$ values:
+
+$$a n \equiv a (n + P) \pmod b$$
+
 From the [Wikipedia modular arithmetic article](https://en.wikipedia.org/wiki/Modular_arithmetic#Basic_properties), we have the following:
 
 > $$\text{If }a + k \equiv b + k \pmod m \text{, where } k \text{ is any integer, then } a \equiv b \pmod m \text{. (1)}$$
@@ -190,7 +248,8 @@ The plot always result in a circle of some radius based on $`k`$. TODO: demonstr
 - TODO
 
 # Musical application
-- TODO
+- https://github.com/sonofthort/amusia and https://github.com/sonofthort/amusia-js have used curlicues to procedurally generate music.
+- More formal description/analysis TODO
 
 # Relation to Gauss sums and theta functions
 Although I would like to further explore and document these relations (while attemping to fill my knowledge gaps in the process), it's worth noting that summations which are similar to: $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$ can be found referenced in materials pertaining to Gauss sums and theta functions:

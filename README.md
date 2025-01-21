@@ -3,7 +3,7 @@ An exploration of curlicue fractals, with accompanying code.
 
 ![face1](media/face2.png "\"The Face\"")
 
-As an amatuer mathematician/enthusiast, I've found it difficult to piece together curlicue fractal information. However, the learning process is rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to consolidate and link information.
+As an amateur mathematician/enthusiast, I've found it difficult to piece together curlicue fractal information. However, the learning process is rewarding, and I hope to continue to work towards a more formalized understanding. For the curious enthusiast like myself, this article aims to consolidate and link information.
 
 I would also like to present some of my own findings, which could very well duplicate past work. If this is the case, I apologize in advance and would very much appreciate feedback! These findings include:
 - A generalized definition
@@ -16,7 +16,7 @@ I hope for this article to be a community effort and to gain feedback from those
 
 # Code
 TODO
-<!---The supplied code is in C++. As there are only a few files, and various methods for linking SDL2, I have not provided any project or build files. Setup in your environemnt of choice should be simple. See https://wiki.libsdl.org/SDL2/Installation.--->
+<!---The supplied code is in C++. As there are only a few files, and various methods for linking SDL2, I have not provided any project or build files. Setup in your environment of choice should be simple. See https://wiki.libsdl.org/SDL2/Installation.--->
 
 # What is a Curlicue fractal?
 > $$\text{Where the function } R(n) \text{ returns a rotation, the plot of each term of}$$
@@ -32,7 +32,7 @@ The preceding formula models a more intuitive system, and I hope to demonstrate 
 1. Define a function which produces an angle (*theta*) from a given integer $`n`$:  $$θ(n)= ...$$
 2. Starting from some origin point (typically $`(0, 0)`$), draw a line at the angle produced by $`θ(1)`$, and with a length defined by some constant value $`r`$ (typically $`1`$).
 3. From the endpoint of this line, draw a new line at angle $`θ(2)`$.
-4. Repeat this process, drawing a line from the end of the previous line, each at an angle determined by $`θ(n)`$ (where $`n`$ cooresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
+4. Repeat this process, drawing a line from the end of the previous line, each at an angle determined by $`θ(n)`$ (where $`n`$ corresponds to the line/iteration number, increasing sequentially by $`1`$), and each with length $`r`$.
 5. Stop this process once a maximum $`n`$ value, $`m`$, is reached.
 
 The resulting plot can vary significantly based on the $`θ(n)`$ function. Some can produce patterns which are chaotic/fractal, while others produce patterns which are bounded/simple.
@@ -102,7 +102,7 @@ This demonstrates that $`r`$ is simply a scaling factor, and otherwise has no be
 $$\text{A curlicue fractal may result from the plot of each term of } \displaystyle\sum_{n=1}^N e^{i θ(n)} \text{, where } θ(n) \text{ is a function which produces an angle.}$$
 
 # Revolutions vs. radians
-Revolutions can sometimes be simpler to work with and more intiuative than radians.
+Revolutions can sometimes be simpler to work with and more intuative than radians.
 
 In the previous examples, $`θ(n)`$ produces an angle (a radian value). If we would instead like our $`θ(n)`$ function to produce revolutions, we can multiply its result by $`2 \pi`$ to convert to radians:
 
@@ -121,7 +121,7 @@ The angle or revolutions for a given $`n`$ produced by $`θ(n)`$ or $`R(n)`$ res
 
 $$\sin θ=\sin(θ \bmod{2 \pi})$$ $$\cos θ=\cos(θ \bmod{2 \pi})$$
 
-The implicit modulos within these sums can be explicitly added without affecting their results:
+The implicit modulus within these sums can be explicitly added without affecting their results:
 
 $$\displaystyle\sum_{n=1}^N e^{i θ(n)}=\displaystyle\sum_{n=1}^N e^{i (θ(n) \bmod{2 \pi})}$$
 $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}=\displaystyle\sum_{n=1}^N e^{i 2 \pi (R(n) \bmod 1)}$$
@@ -135,7 +135,7 @@ Although this seemingly complicates the sums without changing their behavior, no
 # Analysis of specific $`θ(n)`$ functions
 In the following subsections, specific forms of $`θ(n)`$ are analyzed. Each exhibit their own behavior and intricacies, but also share some characteristics and analysis methodologies.
 
-Also, since $`θ(n)`$ functions can be arbitratily mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
+Also, since $`θ(n)`$ functions can be arbitrarily mapped to $`R(n)`$ functions, these sections will study $`R(n)`$ functions for their tendency to simplify analysis.
 
 ## Analysis of $`R(n)=k`$
 Let $`k`$ be an arbitrary real number. This is the simplest form of $`R(n)`$ functions.
@@ -173,7 +173,7 @@ Applying the implicit modulation to this function yields:
 
 $$R(n)=k n \bmod 1$$
 
-From here, a [modular multiplation rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied:
+From here, a [modular multiplication rule](https://github.com/sonofthort/Modular-Arithmetic/blob/main/README.md#multiplication) can be applied:
 
 $$R(n)=(k \bmod 1) n \bmod 1$$
 
@@ -253,7 +253,7 @@ For a given rotation function $`R(n)`$ and a given $`N`$ value applied within:
 
 $$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
 
-If $`R(n)`$ has within it its own variables (such as $`k`$ in the previously analyized functions), a set of all possible values results from the full (non-repeating) range of those variables and all possible combinations of those variables.
+If $`R(n)`$ has within it its own variables (such as $`k`$ in the previously analyzed functions), a set of all possible values results from the full (non-repeating) range of those variables and all possible combinations of those variables.
 
 ## Example
 In some cases a scaling variable $`k`$ can be extracted from within $`R(n)`$, allowing us to rewrite the summation as:
@@ -274,7 +274,7 @@ and with an $`N`$ value of $`4`$, the following set is obtained (points plotted 
 
 ![face1](media/face2.png "\"The Face\"")
 
-This particular plot has several similarities to a human face, including eyes, eyeballs, mouth, nose, nostrils, ears, a jawline, a chin, the outline of a head, and something resembling an Alex Grey-esque brain (?) which connects and centralizes all other features of the face. Perhaps this is a funny coincendence, or some strange cosmic Easter egg.
+This particular plot has several similarities to a human face, including eyes, eyeballs, mouth, nose, nostrils, ears, a jawline, a chin, the outline of a head, and something resembling an Alex Grey-esque brain (?) which connects and centralizes all other features of the face. Perhaps this is a funny coincidence, or some strange cosmic Easter egg.
 
 One might ask if there is any particular significance to the constant $`N=4`$ in this plot. As plots are observed with increasingly large $`N`$ values, there seems to be some evolution towards more complex facial features, until this effect is maximized at $`N=4`$. Beyond this, the facial features become increasingly more "alien", and soon completely fade from perception.
 
@@ -283,8 +283,8 @@ Strangely, there is some special significance to the number $`4`$ and this parti
 On a side note, there are some very interesting plots produced with very large $`N`$ values, and we can actually visually "zoom into" these sets to reveal their intricate details (as we do Mandelbrot Fractals), and analyze the strange points at which lines seems to coalesce. TODO: provide video and code.
 
 ## Rationale for rotating the axis
-- I believe the reason that we plot real numbers horizontally, and imaginary numbers vertically within the complex plane, is largely convention, and an extension from the previously established use of horizontal number lines (which are used when dealing strictly with real numbers). Outside of the very helpful consistency this convention provides, and the agreeableness of a horizontal number line with the wide natural aspect ratio our eyes capture, there exists no purely mathematical link between real numbers and horizontality, and betweem imaginary numbers and verticality.
-- I estimate that vertical symmertry is more prevelant in nature than horizontal symmetry, and that our brains are honed for viewing and analyzing vertical symmetry. Given this possibility, rotating a plot may grant the viewer a new perspective, potentially revealing features which previously went unnoticed.
+- I believe the reason that we plot real numbers horizontally, and imaginary numbers vertically within the complex plane, is largely convention, and an extension from the previously established use of horizontal number lines (which are used when dealing strictly with real numbers). Outside of the very helpful consistency this convention provides, and the agreeableness of a horizontal number line with the wide natural aspect ratio our eyes capture, there exists no purely mathematical link between real numbers and horizontality, and between imaginary numbers and verticality.
+- I estimate that vertical symmetry is more prevalent in nature than horizontal symmetry, and that our brains are honed for viewing and analyzing vertical symmetry. Given this possibility, rotating a plot may grant the viewer a new perspective, potentially revealing features which previously went unnoticed.
 - The Mandelbrot fractal, as well as a potential complex infinity of other plots, also display horizontal symmetry through our conventional alignment. Rotating these plots can grant a new perspective and also increase aesthetic value.
 - In a single case study, the facial resembling features in the previously provided example plot went unnoticed by myself until I rotated the plot to achieve vertical symmetry.
 

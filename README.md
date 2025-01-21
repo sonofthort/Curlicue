@@ -15,7 +15,8 @@ I would also like to present some of my own findings, which could very well dupl
 I hope for this article to be a community effort and to gain feedback from those interested. If you do have any feedback, improvement suggestions, or expansion suggestions, please feel free to raise an issue or to create a pull request, and I will ensure that proper attribution is made.
 
 # Code
-The supplied code is in C++. As there are only a few files, and various methods for linking SDL2, I have not provided any project or build files. Setup in your environemnt of choice should be simple. See https://wiki.libsdl.org/SDL2/Installation.
+TODO
+<!---The supplied code is in C++. As there are only a few files, and various methods for linking SDL2, I have not provided any project or build files. Setup in your environemnt of choice should be simple. See https://wiki.libsdl.org/SDL2/Installation.--->
 
 # What is a Curlicue fractal?
 > $$\text{Where the function } R(n) \text{ returns a rotation, the plot of each term of}$$
@@ -246,7 +247,7 @@ The plot always results in a circle of some radius based on $`k`$. TODO: demonst
 
 ## Analysis of $`R(n)=R(n-1) + k n ^ 2`$
 - TODO
-- 
+
 # Endpoint sets
 For a given rotation function $`R(n)`$ and a given $`N`$ value applied within:
 
@@ -285,7 +286,7 @@ On a side note, there are some very interesting plots produced with very large $
 - I believe the reason that we plot real numbers horizontally, and imaginary numbers vertically within the complex plane, is largely convention, and an extension from the previously established use of horizontal number lines (which are used when dealing strictly with real numbers). Outside of the very helpful consistency this convention provides, and the agreeableness of a horizontal number line with the wide natural aspect ratio our eyes capture, there exists no purely mathematical link between real numbers and horizontality, and betweem imaginary numbers and verticality.
 - I estimate that vertical symmertry is more prevelant in nature than horizontal symmetry, and that our brains are honed for viewing and analyzing vertical symmetry. Given this possibility, rotating a plot may grant the viewer a new perspective, potentially revealing features which previously went unnoticed.
 - The Mandelbrot fractal, as well as a potential complex infinity of other plots, also display horizontal symmetry through our conventional alignment. Rotating these plots can grant a new perspective and also increase aesthetic value.
-- In a single case study, the facial resembling features went unnoticed by myself until I rotated the plot to achieve vertical symmetry.
+- In a single case study, the facial resembling features in the previously provided example plot went unnoticed by myself until I rotated the plot to achieve vertical symmetry.
 
 # Musical application
 - The following repositories have used curlicue fractals to procedurally generate music:

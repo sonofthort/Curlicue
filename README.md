@@ -278,7 +278,7 @@ This particular plot has several similarities to a human face, including eyes, e
 
 One might ask if there is any particular significance to the constant $`N=4`$ in this plot. As plots are observed with increasingly large $`N`$ values, there seems to be some evolution towards more complex facial features, until this effect is maximized at $`N=4`$. Beyond this, the facial features become increasingly more "alien", and soon completely fade from perception.
 
-Strangely, there is some special significance to the number $`4`$ and this particular rotation function. There exists a special periodicity which exists with no other constants and potentially with no other rotation functions (I have yet to discover any other). TODO: Document this periodicity.
+Strangely, there is some special significance to the number $`4`$ and this particular rotation function. There exists a special periodicity which I have yet to observe in any other chaotic rotation function or $`N`$ value. TODO: Document this periodicity.
 
 On a side note, there are some very interesting plots produced with very large $`N`$ values, and we can actually visually "zoom into" these sets to reveal their intricate details (as we do Mandelbrot Fractals), and analyze the strange points at which lines seems to coalesce. TODO: provide video and code.
 

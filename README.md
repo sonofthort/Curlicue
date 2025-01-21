@@ -199,7 +199,7 @@ $$(a n \bmod b) / b = ((a \bmod b)(n \bmod b) \bmod b) /b$$
 
 ($`a \bmod b`$ is technically redundant, since $`0 \leq a \lt b`$)
 
-As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will at least have period of $`b`$. Could a smaller period than $`b`$ exist due to multiplication by $`a`$?
+As $`n`$ is the only variable, we can reduce the periodicity of this function to that of $`n \bmod b`$. Modulo is periodic by the modulus. Therefore, $`R(n)`$ will at least have a period of $`b`$. Could a smaller period than $`b`$ exist due to multiplication by $`a`$?
 
 An algebraic approach can also be employed to determine the periodicity of this function. A periodic function can be expressed as:
 
@@ -239,16 +239,58 @@ $$\lim_{z\to\infty} \lfloor k z \rfloor / z = k$$
 In this way, an irrational number can be thought of as a fraction of infinitely large terms. Irrational $`k`$ values should result in a period of $`\infty`$. In other words, the function is not periodic.
 
 ### Describing the plot
-The plot always result in a circle of some radius based on $`k`$. TODO: demonstrate how the radius can be derived from $`k`$. 
+The plot always results in a circle of some radius based on $`k`$. TODO: demonstrate how the radius can be derived from $`k`$. 
 
 ## Analysis of $`R(n)=k n^2`$
 - TODO
 
 ## Analysis of $`R(n)=R(n-1) + k n ^ 2`$
 - TODO
+- 
+# Endpoint sets
+For a given rotation function $`R(n)`$ and a given $`N`$ value applied within:
+
+$$\displaystyle\sum_{n=1}^N e^{i 2 \pi R(n)}$$
+
+If $`R(n)`$ has within it its own variables (such as $`k`$ in the previously analyized functions), a set of all possible values results from the full (non-repeating) range of those variables and all possible combinations of those variables.
+
+## Example
+In some cases a scaling variable $`k`$ can be extracted from within $`R(n)`$, allowing us to rewrite the summation as:
+
+$$\displaystyle\sum_{n=1}^N e^{i 2 \pi k R(n)}$$
+
+We have shown that in this form, we need only concern ourselves with the range $`0 \leq k < 1`$.
+
+Given this knowledge, we can construct a set of all possible endpoints as:
+
+$$\displaystyle S= \\{ \sum_{n=1}^N e^{i 2 \pi k R(n)}|0 \leq k < 1 \text{, and }N \text{ is a constant} \\} $$
+
+For the following $`R(n)`$ function:
+
+$$R(n)=k n^2$$
+
+and with an $`N`$ value of $`4`$, the following set is obtained (points plotted on the complex plain, and the axis rotated to obtain vertical symmetry):
+
+![face1](media/face2.png "\"The Face\"")
+
+This particular plot has several similarities to a human face, including eyes, eyeballs, mouth, nose, nostrils, ears, a jawline, a chin, the outline of a head, and something resembling an Alex Grey-esque brain (?) which connects and centralizes all other features of the face. Perhaps this is a funny coincendence, or some strange cosmic easter egg.
+
+One might ask if there is any particular significance to the constant $`N=4`$ in this plot. As plots are observed with increasingly large $`N`$ values, there seems to be some evolution towards more complex facial features, until this effect is maximized at $`N=4`$. Beyond this, the facial features become increasingly more "alien", and soon completely fade from perception.
+
+Strangely, there is some special significance to the number $`4`$ and this particular rotation function. There exists a special periodicity which exists with no other constants and potentially with no other rotation functions (I have yet to discover any other). TODO: Document this periodicity.
+
+On a side note, there are some very interesting plots produced with very large $`N`$ values, and we can actually visually "zoom into" these sets to reveal their intricate details (as we do Mandelbrot Fractals), and analyze the strange points at which lines seems to coalesce. TODO: provide video and code.
+
+## Rationale for rotating the axis
+- I believe the reason that we plot real numbers horizontally, and imaginary numbers vertically within the complex plane, is largely convention, and an extension from the previously established use of horizontal number lines (which are used when dealing strictly with real numbers). Outside of the very helpful consistency this convention provides, and the agreeableness of a horizontal number line with the wide natural aspect ratio our eyes capture, there exists no purely mathematical link between real numbers and horizontality, and betweem imaginary numbers and verticality.
+- I estimate that vertical symmertry is more prevelant in nature than horizontal symmetry, and that our brains are honed for viewing and analyzing vertical symmetry. Given this possibility, rotating a plot may grant the viewer a new perspective, potentially revealing features which previously went unnoticed.
+- The Mandelbrot fractal, as well as a potential complex infinity of other plots, also display horizontal symmetry through our conventional alignment. Rotating these plots can grant a new perspective and also increase aesthetic value.
+- In a single case study, the facial resembling features went unnoticed by myself until I rotated the plot to achieve vertical symmetry.
 
 # Musical application
-- https://github.com/sonofthort/amusia and https://github.com/sonofthort/amusia-js have used curlicues to procedurally generate music.
+- The following repositories have used curlicue fractals to procedurally generate music:
+  - https://github.com/sonofthort/amusia
+  - https://github.com/sonofthort/amusia-js
 - More formal description/analysis TODO
 
 # Relation to Gauss sums and theta functions
